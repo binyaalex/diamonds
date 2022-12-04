@@ -1,9 +1,11 @@
+import ProductDetailsMain from './productDetailsMain/ProductDetailsMain'
+
 const ProductDetails = () => {
     return (
         <>
-            ProductDetails
+            <ProductDetailsMain />
         </>
     )
 }
 
-export default ProductDetails
+export default ProductDetailsMain
