@@ -7,12 +7,12 @@ const ProductDetailsMain = () => {
             <ProductGallery />
             <div className={styles.productContent}>
                 <div>
-                    <div>10.02 Carat round diamond</div>
-                    <div>D color | FL Clarity | Very Good cut</div>
-                    <div>SKU: 234324238ZA</div>
+                    <div className={styles.productContentH} >10.02 Carat round diamond</div>
+                    <div className={styles.productContentDescription}>D color | FL Clarity | Very Good cut</div>
+                    <div className={styles.productContentSku}>SKU: 234324238ZA</div>
                 </div>
                 <div>
-                    <div></div>
+                    <div className={styles.productContentPrice}>545,000$</div>
                     <div>
                         buttons
                     </div>
