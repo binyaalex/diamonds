@@ -33,7 +33,7 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
   },
   fontWeight: theme.typography.fontWeightRegular,
   marginRight: theme.spacing(1),
-  color: 'rgba(0, 0, 0, 0.85)',
+  // color: 'rgba(0, 0, 0, 0.85)',
   fontFamily: [
     '-apple-system',
     'BlinkMacSystemFont',
@@ -76,12 +76,31 @@ function Header() {
 
   return (
     <AppBar
-      sx={{ background: "white", color: '#344054' }}
+      sx={{
+        background: "white", color: '#344054', boxShadow: "none", borderBottom: "1px solid #EAECF0",
+        fontFamily: ['Inter']
+      }}
       position="fixed"
     >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <GrDiamond sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Box
+            sx={{
+              background: "linear-gradient(180deg, #FFFFFF 0%, #D0D5DD 100%), #FFFFFF",
+              border: "0.2px solid #D0D5DD",
+              borderRadius: "8px",
+              width: "32px",
+              height: "32px",
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: "center",
+              mr: 1
+            }}
+          >
+            <GrDiamond
+              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            />
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -90,11 +109,11 @@ function Header() {
             sx={{
               mr: 2,
               display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
+              fontWeight: 600,
+              color: '#101828',
               textDecoration: 'none',
+              fontFamily: ['Inter']
+
             }}
           >
             Diamonds
@@ -147,7 +166,7 @@ function Header() {
               mr: 2,
               display: { xs: 'flex', md: 'none' },
               flexGrow: 1,
-              fontFamily: 'monospace',
+              // fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
               color: 'inherit',
