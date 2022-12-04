@@ -1,4 +1,4 @@
-import './App.scss';
+import styles from './App.module.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import ProductDetails from './components/productDetails/ProductDetails';
@@ -9,10 +9,12 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/productdetails" element={<ProductDetails />} />
-        </Routes>
+        <div className={styles.allPages}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/productdetails" element={<ProductDetails />} />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );
