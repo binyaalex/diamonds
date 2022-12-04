@@ -8,6 +8,8 @@ import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
+import Badge from '@mui/material/Badge';
+
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -16,8 +18,12 @@ import { styled } from '@mui/material/styles';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 import { GrDiamond } from 'react-icons/gr';
-import { useState } from 'react';
+import { FiShoppingCart } from 'react-icons/fi';
+import { AiOutlineHeart } from 'react-icons/ai';
+import { IoNotificationsOutline } from 'react-icons/io5';
 
+import { useState } from 'react';
+import avatar from "../../assets/images/avatar.jpg"
 const pages = ['Loose Diamonds', 'Fancy Color Diamonds ', 'Lorem'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -194,10 +200,52 @@ function Header() {
             <Box sx={{ p: 3 }} />
           </Box>
 
-          <Box sx={{ flexGrow: 0 }}>
+
+
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
+            <Badge badgeContent={3} color="error" >
+              <IconButton
+                sx={{
+                  padding: "12px",
+                  width: "42px",
+                  height: "40px",
+                  border: "1px solid #D0D5DD",
+                  boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+                  borderRadius: "8px",
+                  ml: 2
+                }}>
+                <FiShoppingCart />
+              </IconButton>
+            </Badge>
+            <Badge badgeContent={3} color="error" >
+
+              <IconButton
+                sx={{
+                  padding: "12px",
+                  width: "42px",
+                  height: "40px",
+                  border: "1px solid #D0D5DD",
+                  boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+                  borderRadius: "8px",
+                  ml: 2
+                }}>
+                <AiOutlineHeart />
+              </IconButton>
+            </Badge>
+            <IconButton
+              sx={{
+                padding: "12px",
+                width: "42px",
+                height: "40px",
+                borderRadius: "8px",
+                ml: 2
+              }}>
+              <IoNotificationsOutline />
+            </IconButton>
             <Tooltip title="Open settings">
-              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
+                <Avatar alt="Remy Sharp" src={avatar} />
               </IconButton>
             </Tooltip>
             <Menu
@@ -215,6 +263,7 @@ function Header() {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
+
             >
               {settings.map((setting) => (
                 <MenuItem key={setting} onClick={handleCloseUserMenu}>
@@ -225,7 +274,7 @@ function Header() {
           </Box>
         </Toolbar>
       </Container>
-    </AppBar>
+    </AppBar >
   );
 }
 export default Header;
