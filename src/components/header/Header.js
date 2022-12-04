@@ -18,21 +18,18 @@ import Tab from '@mui/material/Tab';
 import { GrDiamond } from 'react-icons/gr';
 import { useState } from 'react';
 
-const pages = ['Loose Diamonds', 'Fancy Color Diamonds ', 'Blog'];
+const pages = ['Loose Diamonds', 'Fancy Color Diamonds ', 'Lorem'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const AntTabs = styled(Tabs)({
-  borderBottom: '1px solid #e8e8e8',
   '& .MuiTabs-indicator': {
-    backgroundColor: '#1890ff',
+    display: "none",
   },
 });
 
 const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) => ({
   textTransform: 'none',
-  minWidth: 0,
   [theme.breakpoints.up('sm')]: {
-    minWidth: 0,
   },
   fontWeight: theme.typography.fontWeightRegular,
   marginRight: theme.spacing(1),
@@ -40,68 +37,27 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(({ theme }) =
   fontFamily: [
     '-apple-system',
     'BlinkMacSystemFont',
-    '"Segoe UI"',
-    'Roboto',
-    '"Helvetica Neue"',
-    'Arial',
-    'sans-serif',
-    '"Apple Color Emoji"',
-    '"Segoe UI Emoji"',
-    '"Segoe UI Symbol"',
+    'Inter',
   ].join(','),
   '&:hover': {
-    color: '#40a9ff',
-    opacity: 1,
+    color: '#6941C6',
   },
   '&.Mui-selected': {
-    color: '#1890ff',
+    color: '#6941C6',
+    backgroundColor: '#F9F5FF',
+    borderRadius: "6px",
     fontWeight: theme.typography.fontWeightMedium,
   },
   '&.Mui-focusVisible': {
-    backgroundColor: '#d1eaff',
+    color: '#6941C6',
   },
 }));
 
-const StyledTabs = styled((props) => (
-  <Tabs
-    {...props}
-    TabIndicatorProps={{ children: <span className="MuiTabs-indicatorSpan" /> }}
-  />
-))({
-  '& .MuiTabs-indicator': {
-    display: 'flex',
-    justifyContent: 'center',
-    backgroundColor: 'transparent',
-  },
-  '& .MuiTabs-indicatorSpan': {
-    maxWidth: 40,
-    width: '100%',
-    backgroundColor: '#635ee7',
-  },
-});
-
-const StyledTab = styled((props) => <Tab disableRipple {...props} />)(
-  ({ theme }) => ({
-    textTransform: 'none',
-    fontWeight: theme.typography.fontWeightRegular,
-    fontSize: theme.typography.pxToRem(15),
-    marginRight: theme.spacing(1),
-    color: 'rgba(255, 255, 255, 0.7)',
-    '&.Mui-selected': {
-      color: '#fff',
-    },
-    '&.Mui-focusVisible': {
-      backgroundColor: 'rgba(100, 95, 228, 0.32)',
-    },
-  }),
-);
 function Header() {
   const [value, setValue] = React.useState(0);
-
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-
   const [anchorElNav, setAnchorElNav] = useState(null);
   const [anchorElUser, setAnchorElUser] = useState(null);
 
@@ -111,18 +67,16 @@ function Header() {
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget);
   };
-
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
   };
 
   return (
     <AppBar
-      // sx={{ background:"white",color:'#344054' }} 
+      sx={{ background: "white", color: '#344054' }}
       position="fixed"
     >
       <Container maxWidth="xl">
@@ -202,32 +156,22 @@ function Header() {
           >
             LOGO
           </Typography>
-          {/* <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-            {pages.map((page) => (
-              <Button
-                key={page}
-                onClick={handleCloseNavMenu}
-                sx={{ my: 2, color: 'white', display: 'block' }}
-              >
-                {page}
-              </Button>
-            ))}
-          </Box> */}
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
 
-            <StyledTabs
+            <AntTabs
               value={value}
               onChange={handleChange}
               aria-label="styled tabs example"
             >
               {pages.map((page) => (
 
-                <StyledTab
+                <AntTab
                   label={page}
                   key={page}
                 />
               ))}
-            </StyledTabs>
+            </AntTabs>
             <Box sx={{ p: 3 }} />
           </Box>
 
