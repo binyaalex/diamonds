@@ -5,11 +5,14 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
+import MenuList from '@mui/material/MenuList';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Avatar from '@mui/material/Avatar';
 import Badge from '@mui/material/Badge';
-
+import Divider from '@mui/material/Divider';
+import ListItemText from '@mui/material/ListItemText';
+import ListItemIcon from '@mui/material/ListItemIcon';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
@@ -24,8 +27,27 @@ import { IoNotificationsOutline } from 'react-icons/io5';
 
 import { useState } from 'react';
 import avatar from "../../assets/images/avatar.jpg"
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg"
+import { ReactComponent as Orders } from "../../assets/icons/Orders.svg"
+import { ReactComponent as Listings } from "../../assets/icons/Listings.svg"
+import { ReactComponent as Offers } from "../../assets/icons/Offers.svg"
+import { ReactComponent as Settings } from "../../assets/icons/Settings.svg"
+import { ReactComponent as Support } from "../../assets/icons/Support.svg"
+import { ReactComponent as Out } from "../../assets/icons/Out.svg"
+
+import styles from '../../App.module.scss';
+import { EightK } from '@mui/icons-material';
+
 const pages = ['Loose Diamonds', 'Fancy Color Diamonds ', 'Lorem'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const profile = [
+  { title: 'Orders', icon: <Orders /> },
+  { title: 'My Listings', icon: <Listings /> },
+  { title: 'My Offers', icon: <Offers /> },
+  { title: 'Settings', icon: <Settings />, divider: true },
+  { title: 'Support', icon: <Support />, divider: true },
+  { title: 'Log Out', icon: <Out /> },
+
+];
 
 const AntTabs = styled(Tabs)({
   '& .MuiTabs-indicator': {
@@ -82,6 +104,7 @@ function Header() {
 
   return (
     <AppBar
+      className={styles.allPages}
       sx={{
         background: "white", color: '#344054', boxShadow: "none", borderBottom: "1px solid #EAECF0",
         fontFamily: ['Inter']
@@ -103,8 +126,7 @@ function Header() {
               mr: 1
             }}
           >
-            <GrDiamond
-              sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }}
+            <Logo
             />
           </Box>
           <Typography
@@ -119,14 +141,12 @@ function Header() {
               color: '#101828',
               textDecoration: 'none',
               fontFamily: ['Inter']
-
             }}
           >
             Diamonds
           </Typography>
 
-          <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-
+          {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
               aria-label="account of current user"
@@ -161,7 +181,8 @@ function Header() {
                 </MenuItem>
               ))}
             </Menu>
-          </Box>
+          </Box> 
+
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
@@ -180,30 +201,24 @@ function Header() {
             }}
           >
             LOGO
-          </Typography>
+          </Typography> */}
 
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
             <AntTabs
               value={value}
               onChange={handleChange}
               aria-label="styled tabs example"
             >
               {pages.map((page) => (
-
                 <AntTab
                   label={page}
                   key={page}
                 />
               ))}
             </AntTabs>
-            <Box sx={{ p: 3 }} />
           </Box>
 
-
-
-          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
-
+          <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'right' }}>
             <Badge badgeContent={3} color="error" >
               <IconButton
                 sx={{
@@ -218,8 +233,8 @@ function Header() {
                 <FiShoppingCart />
               </IconButton>
             </Badge>
-            <Badge badgeContent={3} color="error" >
 
+            <Badge badgeContent={3} color="error" >
               <IconButton
                 sx={{
                   padding: "12px",
@@ -233,6 +248,7 @@ function Header() {
                 <AiOutlineHeart />
               </IconButton>
             </Badge>
+
             <IconButton
               sx={{
                 padding: "12px",
@@ -243,13 +259,21 @@ function Header() {
               }}>
               <IoNotificationsOutline />
             </IconButton>
-            <Tooltip title="Open settings">
+
+            <Tooltip title="My Profile">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
                 <Avatar alt="Remy Sharp" src={avatar} />
               </IconButton>
             </Tooltip>
+
             <Menu
-              sx={{ mt: '45px' }}
+              //     PaperProps={{
+              //   style: {width: "240px", height: "300px" },
+              // }}
+              sx={{
+                mt: '45px',
+                // width: "240px", height: "300px"
+              }}
               id="menu-appbar"
               anchorEl={anchorElUser}
               anchorOrigin={{
@@ -263,15 +287,44 @@ function Header() {
               }}
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
-
             >
-              {settings.map((setting) => (
-                <MenuItem key={setting} onClick={handleCloseUserMenu}>
-                  <Typography textAlign="center">{setting}</Typography>
-                </MenuItem>
-              ))}
+              <MenuList
+
+              >
+                <Box
+                  sx={{
+                    width: "240px", display: 'flex', alignItems: 'center', p: "0 16px "
+                  }}>
+                  <Avatar alt="Remy Sharp" src={avatar} />
+                  <Box
+                    sx={{
+                      p: "12px "
+                    }}>
+                    <Typography >Danna Cohen</Typography>
+                    <Typography
+                      sx={{
+                        color: "  #667085 "
+                      }}
+
+                    >Danna@gmail.com</Typography>
+                  </Box>
+                </Box>
+                <Divider />
+
+                {profile.map((el) => (
+                  <>
+                    <MenuItem key={el.title} onClick={handleCloseUserMenu}>
+                      <ListItemIcon>{el.icon}</ListItemIcon>
+                      <ListItemText fontSize="small">{el.title}</ListItemText>
+                    </MenuItem>
+                    {el.divider ? <Divider /> : null}
+                  </>
+                ))}
+              </MenuList>
             </Menu>
+
           </Box>
+
         </Toolbar>
       </Container>
     </AppBar >
