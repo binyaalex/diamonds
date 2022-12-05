@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cardList {
+    display: flex;
+    overflow-x: scroll;
+    margin-top: 10px;
+    padding: 0 !important;
+}
+
+.card {
+    margin-left: 10px;
+    border: 1px solid rgb(211, 211, 211, 0.5);
+    border-radius: 10px;
+    border-radius: 14px;
+    width: 150px;
+}
+
+.cardImg {
+    position: relative;
+    height: 64%;
+    border-bottom: 1px solid rgb(211, 211, 211, 0.5);
+    margin-bottom: 10px;
+}
+
+.cardImg>img {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 14px;
+}
+
+.cardRare {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    background: var(--secondary);
+    border-radius: 66px;
+    width: 45%;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 10px;
+    text-align: center;
+    padding: 4px;
+    color: var(--primary);
+}
+
+.cardContent {
+    text-align: right;
+}
+
+.cardPrice {
+    font-size: 14px;
+    font-weight: bold;
+}
