@@ -1,7 +1,50 @@
 .allPages {
-  padding: 64px 8vw 0;
+  padding: 120px 8vw;
 }
 
 .nav {
-  padding: 0 112px;
+  padding: 0 8vw;
+}
+
+.mainTitle {
+  font-weight: 500 !important;
+  font-size: 30px !important;
+  line-height: 38px !important;
+  color: #101828;
+  padding-bottom: 34px;
+}
+
+.filter {
+  background: #F9FAFB;
+  border-bottom: 1px solid #D0D5DD;
+  border-radius: 8px;
+  padding: 26px;
+
+  .subTitle {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    color: #344054;
+    margin-bottom: 12px;
+  }
+
+  .button {
+    text-transform: none;
+    background: #FFFFFF;
+    border: 1px solid #D0D5DD;
+    box-shadow: 0px 1px 2px rgba(16, 24, 40, 0.05);
+    border-radius: 8px;
+    padding: 12px 8px;
+    color: #667085;
+    text-align: center;
+
+    .buttonText {
+      font-weight: 400;
+      font-size: 12px;
+      line-height: 18px;
+      color: #667085;
+      margin-left: 9px;
+
+    }
+  }
 }
