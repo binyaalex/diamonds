@@ -1,0 +1,48 @@
+.cardImg {
+    padding: 10px 50px 20px 60px;
+    box-sizing: border-box;
+    object-fit: contain !important;
+    background-color: #F2F4F7;
+}
+
+.cardContent {
+    position: relative;
+}
+
+.cardIcons {
+    position: absolute;
+    top: -78px;
+    left: 0;
+    width: 94%;
+    justify-content: space-between;
+}
+
+.cardPrice {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+    letter-spacing: 0em;
+    text-align: left;
+    color: #101828;
+    margin-bottom: 16px;
+}
+
+.cardTitle {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 28px;
+    color: #101828;
+}
+
+.cardDespriction {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #6941C6;
+}
+
