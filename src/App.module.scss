@@ -22,10 +22,22 @@
 
   .subTitle {
     font-weight: 600;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 24px;
     color: #344054;
     margin-bottom: 12px;
+  }
+
+  .size {
+    width: 94px;
+    height: 50px;
+    background: #FFFFFF !important;
+    border: 1px solid #D6DDEB !important;
+    padding: auto !important;
+    // .MuiInputBase-input {
+    font-size: 15px;
+    text-align: center !important;
+    // }
   }
 
   .button {
@@ -40,11 +52,10 @@
 
     .buttonText {
       font-weight: 400;
-      font-size: 12px;
+      font-size: 11px;
       line-height: 18px;
       color: #667085;
       margin-left: 9px;
-
     }
   }
 }

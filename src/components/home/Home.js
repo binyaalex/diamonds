@@ -10,9 +10,12 @@ import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
 import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
 import { styled } from '@mui/material/styles';
+import InputBase from '@mui/material/InputBase';
+import TextField from '@mui/material/TextField';
 
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
 const shapesTwo = ["Oval", "Radiant", "Cushion", "Heart", "Asscher"]
+const cut = ["Exellent", "Very Good", "Good", "Fair", "Poor"]
 
 const FilterButton = styled(Button)({
     textTransform: 'none',
@@ -46,14 +49,15 @@ const Home = () => {
                 <FormGroup>
                     <Grid container spacing={2}>
                         <Grid item xs={5}>
-                            <FormControl >
+                            <FormControl sx={{ width: '100%' }}>
                                 <FormLabel
                                     className={styles.subTitle}>
                                     Shape
                                 </FormLabel>
 
-                                {/* sx={{ display: 'flex', justifyContent: "space-between", }}> */}
-                                <Grid item>
+                                <Grid item
+                                    sx={{ display: 'flex', justifyContent: "space-between", }}
+                                >
                                     {shapesOne.map((shape) => (
                                         <Button variant="outlined" className={styles.button}>
                                             <Diamond />
@@ -64,7 +68,8 @@ const Home = () => {
                                     )
                                     )}
                                 </Grid>
-                                <Grid>
+                                <Grid
+                                    sx={{ display: 'flex', justifyContent: "space-between", m: "12px 0" }}>
                                     {shapesTwo.map((shape) => (
                                         <Button variant="outlined" className={styles.button}>
                                             <Diamond />
@@ -77,7 +82,45 @@ const Home = () => {
                                 </Grid>
                             </FormControl>
                         </Grid>
+
+                        <Grid item xs={5}>
+                            <FormControl sx={{ width: '100%' }}>
+                                <FormLabel
+                                    className={styles.subTitle}>
+                                    Size
+                                </FormLabel>
+                                <Box
+                                    sx={{ display: 'flex', width: '100%', alignItems: 'center' }}
+                                >
+                                    <InputBase
+                                        className={styles.size}
+                                        type="text"
+                                        inputProps={{ style: { textAlign: 'center' } }}
+                                    >
+                                    </InputBase>
+                                    <Typography
+                                        sx={{
+                                            color: '#7C8493'
+                                            , m: "12px 30px"
+                                        }}
+                                    >to</Typography>
+                                    <InputBase
+                                        className={styles.size}
+                                        type="text"
+                                        inputProps={{ style: { textAlign: 'center' } }}
+                                    >
+                                    </InputBase>
+                                </Box>
+
+
+                            </FormControl>
+                        </Grid>
+
+
                     </Grid>
+
+
+
                 </FormGroup >
             </Box >
         </
