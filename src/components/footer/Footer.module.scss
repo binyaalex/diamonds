@@ -1,11 +1,22 @@
 .mainWrapper {
-  border: 2px solid red;
+  //   background: #f4f6f8;
+  background: #f9fafb;
 }
 
 .fistDiv {
-  border: 2px solid black;
+  //   border: 2px solid black;
+  margin-bottom: 20px;
+  background: #f9fafb;
+  display: flex;
+  justify-content: space-around;
 }
 
 .secondDiv {
-  border: 2px solid black;
+  //   border: 2px solid black;
+  background: #f4f6f8;
+}
+
+.socialLogo {
+  display: inherit;
+  justify-content: space-around;
 }
