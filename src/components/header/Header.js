@@ -104,7 +104,7 @@ function Header() {
 
   return (
     <AppBar
-      className={styles.allPages}
+      className={styles.nav}
       sx={{
         background: "white", color: '#344054', boxShadow: "none", borderBottom: "1px solid #EAECF0",
         fontFamily: ['Inter']
