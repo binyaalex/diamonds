@@ -8,7 +8,9 @@ import favorit from '../../../assets/images/favorit.png'
 const ProductDetailsMain = () => {
     return (
         <div className={styles.ProductDetailsMain}>
-            <ProductGallery />
+            <div style={{width: '34vw'}}>
+                <ProductGallery />
+            </div>
             <div className={styles.productContent}>
                 <div>
                     <div className={styles.productContentH} >10.02 Carat round diamond</div>
