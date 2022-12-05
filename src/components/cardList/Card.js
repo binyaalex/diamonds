@@ -37,7 +37,7 @@ export default function RecipeReviewCard({img}) {
   };
 
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card sx={{ maxWidth: 279, border: '1px solid #EAECF0' }}>
       <CardMedia
         className={styles.cardImg}
         component="img"
