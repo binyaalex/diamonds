@@ -2,7 +2,10 @@
   //   background: #f4f6f8;
   background: #f9fafb;
 }
-
+.logo {
+  display: flex;
+  padding-top: 50px;
+}
 .fistDiv {
   //   border: 2px solid black;
   margin-bottom: 20px;
@@ -20,10 +23,12 @@
 .socialLogo {
   display: inherit;
   justify-content: space-around;
+
 }
 
 .fistMenu {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  padding-top: 50px;
 }

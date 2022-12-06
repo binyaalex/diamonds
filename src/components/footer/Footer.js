@@ -18,7 +18,7 @@ function Footer() {
     <>
       <div className={styles.mainWrapper}>
         <div className={styles.fistDiv}>
-          <Grid xs={8} className="logo">
+          <Grid xs={8} className={styles.logo}>
             <Box
               sx={{
                 background:
@@ -392,7 +392,7 @@ function Footer() {
           </Box>
         </div>
         <Grid container spacing={2} className={styles.secondDiv}>
-          <Grid item xs={8} className="">
+          <Grid item xs={9} className="">
             {" "}
             <Typography
               sx={{
@@ -407,7 +407,7 @@ function Footer() {
               Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
             </Typography>
           </Grid>
-          <Grid item xs={4} className={styles.socialLogo}>
+          <Grid item xs={2} className={styles.socialLogo}>
             <Box>
               <img src={Facebook} />
             </Box>
