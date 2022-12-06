@@ -1,4 +1,7 @@
+import React, { useState } from 'react';
 import styles from '../../App.module.scss';
+
+//mui
 import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -8,10 +11,13 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import ButtonGroup from '@mui/material/ButtonGroup';
-import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
 import { styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import TextField from '@mui/material/TextField';
+import Slider from '@mui/material/Slider';
+
+//assets
+import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
 
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
 const shapesTwo = ["Oval", "Radiant", "Cushion", "Heart", "Asscher"]
@@ -37,18 +43,18 @@ const FilterButton = styled(Button)({
 });
 
 const Home = () => {
-    return (
+    const [value, setValue] = useState([0.94, 13.57]);
 
-        <
-            // Container
-            >
+    return (
+        <>
             <Typography className={styles.mainTitle}>
                 Loose Diamonds Search
             </Typography>
+
             <Box className={styles.filter}>
                 <FormGroup>
-                    <Grid container spacing={2}>
-                        <Grid item xs={5}>
+                    <Grid container spacing={6}>
+                        <Grid item >
                             <FormControl sx={{ width: '100%' }}>
                                 <FormLabel
                                     className={styles.subTitle}>
@@ -83,19 +89,20 @@ const Home = () => {
                             </FormControl>
                         </Grid>
 
-                        <Grid item xs={5}>
+                        <Grid item >
                             <FormControl sx={{ width: '100%' }}>
                                 <FormLabel
                                     className={styles.subTitle}>
                                     Size
                                 </FormLabel>
                                 <Box
-                                    sx={{ display: 'flex', width: '100%', alignItems: 'center' }}
+                                    sx={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}
                                 >
                                     <InputBase
                                         className={styles.size}
                                         type="text"
                                         inputProps={{ style: { textAlign: 'center' } }}
+                                        value={value[0]}
                                     >
                                     </InputBase>
                                     <Typography
@@ -108,25 +115,71 @@ const Home = () => {
                                         className={styles.size}
                                         type="text"
                                         inputProps={{ style: { textAlign: 'center' } }}
+                                        value={value[1]}
+
                                     >
                                     </InputBase>
                                 </Box>
-
-
+                                <Box
+                                >
+                                    <Slider
+                                        sx={{
+                                            width: 300,
+                                            padding: '22px 0',
+                                            color: '#4640DE',
+                                            height: '12px',
+                                            borderRadius: '0',
+                                            '& .MuiSlider-thumb': {
+                                                color: 'white',
+                                                borderRadius: '1px',
+                                                border: 'solid 2px #4640DE',
+                                                width: '14px',
+                                                height: '24px'
+                                            }
+                                        }}
+                                        value={value}
+                                        onChange={e => setValue(e.target.value)}
+                                        min={0}
+                                        step={0.01}
+                                        max={20} />
+                                </Box>
                             </FormControl>
                         </Grid>
 
+                        <Grid item >
+                            <FormControl sx={{ width: '100%' }}>
+                                <FormLabel
+                                    className={styles.subTitle}>
+                                    CertiFied
+                                </FormLabel>
+
+                                <Box>
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            GIA
+                                        </Typography>
+                                    </Button>
+
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            Other Labs
+                                        </Typography>
+                                    </Button>
+
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            Uncertified
+                                        </Typography>
+                                    </Button>
+
+                                </Box>
+                            </FormControl>
+                        </Grid>
 
                     </Grid>
-
-
-
                 </FormGroup >
             </Box >
-        </
-        // Container 
-        >
-
+        </>
     )
 }
 
