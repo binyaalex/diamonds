@@ -16,6 +16,7 @@ import IconButton from '@mui/material/IconButton';
 //assets
 import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
 import { ReactComponent as Search } from "../../assets/icons/Search.svg"
+import { ReactComponent as Sort } from "../../assets/icons/Sort.svg"
 
 //data
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
@@ -82,15 +83,7 @@ const Filter = () => {
         <Typography className={styles.mainTitle}>
           Loose Diamonds Search
         </Typography>
-        <IconButton
-        // sx={{
-        //   padding: "12px",
-        //   width: "42px",
-        //   height: "40px",
-        //   borderRadius: "8px",
-        //   ml: 2
-        // }}
-        >
+        <IconButton       >
           <Search />
         </IconButton>
       </Box>
@@ -269,7 +262,18 @@ const Filter = () => {
             ))}
           </Grid>
         </FormGroup >
+        <Box sx={{ height: '1px', width: '100%', display: 'flex', justifyContent: 'center' }}>
+          <Button variant="outlined" className={styles.button}
+            sx={{ position: 'relative', height: '40px' }}>
+            <Sort />
+            <Typography className={styles.largeButtonText}>
+              Advanced Filters
+            </Typography>
+          </Button>
+        </Box>
       </Box >
+
+
     </>
   )
 }
