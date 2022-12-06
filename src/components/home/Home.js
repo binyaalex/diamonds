@@ -3,6 +3,7 @@ import styles from '../../App.module.scss';
 import Filter from './Filter'
 //mui
 import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 
 //assets
@@ -16,6 +17,9 @@ const Home = () => {
                 Loose Diamonds Search
             </Typography>
             <Filter />
+            <Box
+                sx={{ height: '50vh' }} />
+            {/* <Footer /> */}
         </>
     )
 }
