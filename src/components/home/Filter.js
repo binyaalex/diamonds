@@ -20,19 +20,39 @@ const shapesTwo = ["Oval", "Radiant", "Cushion", "Heart", "Asscher"]
 const sliders = [
   {
     title: "Cut",
-    labels:
-      ["Exellent", "Very Good", "Good", "Fair", "Poor"]
+    labels: ["Exellent", "Very Good", "Good", "Fair", "Poor"],
+    colors: [
+      '#E9D7FE, #E9D7FE 20%',
+      '#D6BBFB 20%, #D6BBFB 40%',
+      '#9E77ED 40%, #9E77ED 60%',
+      '#6941C6 60%, #6941C6 80%',
+      '#42307D 80%'
+    ]
   },
   {
     title: "Color",
     labels:
       ["D", "E", "F", "G", "H", "I", "j", "K"
-      ]
+      ],
+    colors: [
+      '#E9D7FE, #E9D7FE 20%',
+      '#D6BBFB 20%, #D6BBFB 40%',
+      '#9E77ED 40%, #9E77ED 60%',
+      '#6941C6 60%, #6941C6 80%',
+      '#42307D 80%'
+    ]
   },
   {
     title: "Clarity",
     labels: [
       "FL", "IF", "VVS2", "VS1", "VS2", "SI1", "SI3", "I1", "I2", "I3"
+    ],
+    colors: [
+      '#E9D7FE, #E9D7FE 20%',
+      '#D6BBFB 20%, #D6BBFB 40%',
+      '#9E77ED 40%, #9E77ED 60%',
+      '#6941C6 60%, #6941C6 80%',
+      '#42307D 80%'
     ]
   },
 ]
@@ -130,8 +150,8 @@ const Filter = () => {
                     borderRadius: '0',
                     '& .MuiSlider-thumb': {
                       color: 'white',
-                      borderRadius: '1px',
-                      border: 'solid 2px #4640DE',
+                      borderRadius: '2px',
+                      border: 'solid 1px #4640DE',
                       width: '14px',
                       height: '24px'
                     }
@@ -184,11 +204,14 @@ const Filter = () => {
 
               <FormControl sx={{ width: '100%' }}>
                 <FormLabel
+
                   className={styles.subTitle}>
                   {slider.title}
                 </FormLabel>
                 <Box
-                  sx={{ display: 'flex', justifyContent: 'space-between' }}
+                  sx={{
+                    display: 'flex', justifyContent: 'space-between',
+                  }}
                 >
                   {slider.labels.map((label) => (
                     <Typography
@@ -202,14 +225,20 @@ const Filter = () => {
                   sx={{
                     width: 300,
                     padding: '22px 0',
-                    color: '#4640DE',
+                    // color: '#4640DE',
                     height: '12px',
                     borderRadius: '0',
+                    '& .MuiSlider-rail': {
+                      opacity: 1, backgroundImage: `linear-gradient(to right, ${slider.colors.join(', ')})`,
+                    },
+                    '& .MuiSlider-track': {
+                      color: 'transparent',
+                    },
                     '& .MuiSlider-thumb': {
                       color: 'white',
-                      borderRadius: '1px',
-                      border: 'solid 2px #4640DE',
-                      width: '14px',
+                      borderRadius: '2px',
+                      border: 'solid 1px #4640DE',
+                      width: '16px',
                       height: '24px'
                     }
                   }}
