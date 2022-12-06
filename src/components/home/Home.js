@@ -46,16 +46,14 @@ const Home = () => {
     const [value, setValue] = useState([0.94, 13.57]);
 
     return (
-
-        <
-            // Container
-            >
+        <>
             <Typography className={styles.mainTitle}>
                 Loose Diamonds Search
             </Typography>
+
             <Box className={styles.filter}>
                 <FormGroup>
-                    <Grid container spacing={2}>
+                    <Grid container spacing={6}>
                         <Grid item >
                             <FormControl sx={{ width: '100%' }}>
                                 <FormLabel
@@ -98,7 +96,7 @@ const Home = () => {
                                     Size
                                 </FormLabel>
                                 <Box
-                                    sx={{ display: 'flex', width: '100%', alignItems: 'center' }}
+                                    sx={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}
                                 >
                                     <InputBase
                                         className={styles.size}
@@ -122,10 +120,12 @@ const Home = () => {
                                     >
                                     </InputBase>
                                 </Box>
-                                <Box>
+                                <Box
+                                >
                                     <Slider
                                         sx={{
                                             width: 300,
+                                            padding: '22px 0',
                                             color: '#4640DE',
                                             height: '12px',
                                             borderRadius: '0',
@@ -143,21 +143,43 @@ const Home = () => {
                                         step={0.01}
                                         max={20} />
                                 </Box>
-
                             </FormControl>
                         </Grid>
 
+                        <Grid item >
+                            <FormControl sx={{ width: '100%' }}>
+                                <FormLabel
+                                    className={styles.subTitle}>
+                                    CertiFied
+                                </FormLabel>
+
+                                <Box>
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            GIA
+                                        </Typography>
+                                    </Button>
+
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            Other Labs
+                                        </Typography>
+                                    </Button>
+
+                                    <Button variant="outlined" className={styles.button}>
+                                        <Typography className={styles.buttonText}>
+                                            Uncertified
+                                        </Typography>
+                                    </Button>
+
+                                </Box>
+                            </FormControl>
+                        </Grid>
 
                     </Grid>
-
-
-
                 </FormGroup >
             </Box >
-        </
-        // Container 
-        >
-
+        </>
     )
 }
 
