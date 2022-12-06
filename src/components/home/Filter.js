@@ -17,15 +17,39 @@ import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
 //data
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
 const shapesTwo = ["Oval", "Radiant", "Cushion", "Heart", "Asscher"]
-const cut = ["Exellent", "Very Good", "Good", "Fair", "Poor"]
-
+const sliders = [
+  {
+    title: "Cut",
+    labels:
+      ["Exellent", "Very Good", "Good", "Fair", "Poor"]
+  },
+  {
+    title: "Color",
+    labels:
+      ["D", "E", "F", "G", "H", "I", "j", "K"
+      ]
+  },
+  {
+    title: "Clarity",
+    labels: [
+      "FL", "IF", "VVS2", "VS1", "VS2", "SI1", "SI3", "I1", "I2", "I3"
+    ]
+  },
+]
+// labels: [
+//   {value:0, label:"Exellent"},
+//    {value:1, label:"Very Good"}, 
+//    {value:2,label:"Good"}, 
+//    {value:3,label:"Fair"}, 
+//    {value:4"Poor"] 
+//   },
 const Filter = () => {
-  const [value, setValue] = useState([0.94, 13.57]);
+  const [size, setSize] = useState([0.94, 13.57]);
+  const [cut, setCut] = useState([0, 5]);
+  const [color, setColor] = useState([0, 8]);
+  const [clarity, setClarity] = useState([0, 10]);
 
   return (
-
-
-
     <Box className={styles.filter}>
       <FormGroup>
         <Grid container spacing={6}>
@@ -77,7 +101,7 @@ const Filter = () => {
                   className={styles.size}
                   type="text"
                   inputProps={{ style: { textAlign: 'center' } }}
-                  value={value[0]}
+                  value={size[0]}
                 >
                 </InputBase>
                 <Typography
@@ -90,7 +114,7 @@ const Filter = () => {
                   className={styles.size}
                   type="text"
                   inputProps={{ style: { textAlign: 'center' } }}
-                  value={value[1]}
+                  value={size[1]}
 
                 >
                 </InputBase>
@@ -112,11 +136,12 @@ const Filter = () => {
                       height: '24px'
                     }
                   }}
-                  value={value}
-                  onChange={e => setValue(e.target.value)}
+                  value={size}
+                  onChange={e => setSize(e.target.value)}
                   min={0}
                   step={0.01}
-                  max={20} />
+                  max={20}
+                />
               </Box>
             </FormControl>
           </Grid>
@@ -150,6 +175,58 @@ const Filter = () => {
               </Box>
             </FormControl>
           </Grid>
+
+          {/* <Grid item
+            sx={{ display: 'flex', justifyContent: 'space-between' }}
+          > */}
+          {sliders.map((slider, i) => (
+            <Grid item>
+
+              <FormControl sx={{ width: '100%' }}>
+                <FormLabel
+                  className={styles.subTitle}>
+                  {slider.title}
+                </FormLabel>
+                <Box
+                  sx={{ display: 'flex', justifyContent: 'space-between' }}
+                >
+                  {slider.labels.map((label) => (
+                    <Typography
+                      className={styles.subTitle}
+                    >
+                      {label}
+                    </Typography>
+                  ))}
+                </Box>
+                <Slider
+                  sx={{
+                    width: 300,
+                    padding: '22px 0',
+                    color: '#4640DE',
+                    height: '12px',
+                    borderRadius: '0',
+                    '& .MuiSlider-thumb': {
+                      color: 'white',
+                      borderRadius: '1px',
+                      border: 'solid 2px #4640DE',
+                      width: '14px',
+                      height: '24px'
+                    }
+                  }}
+                  value={i === 0 ? cut : i === 1 ? color : clarity}
+                  onChange={e => {
+                    i === 0 ? setCut(e.target.value) :
+                      i === 1 ? setColor(e.target.value) :
+                        setClarity(e.target.value)
+                  }}
+                  min={0}
+                  max={slider.labels.length - 1}
+                />
+
+              </FormControl>
+            </Grid>
+          ))}
+
 
         </Grid>
       </FormGroup >
