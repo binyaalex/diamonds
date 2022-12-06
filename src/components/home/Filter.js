@@ -22,11 +22,10 @@ const sliders = [
     title: "Cut",
     labels: ["Exellent", "Very Good", "Good", "Fair", "Poor"],
     colors: [
-      '#E9D7FE, #E9D7FE 20%',
-      '#D6BBFB 20%, #D6BBFB 40%',
-      '#9E77ED 40%, #9E77ED 60%',
-      '#6941C6 60%, #6941C6 80%',
-      '#42307D 80%'
+      '#E9D7FE, #E9D7FE 25%',
+      '#D6BBFB 25%, #D6BBFB 50%',
+      '#9E77ED 50%, #9E77ED 75%',
+      '#6941C6 75%'
     ]
   },
   {
@@ -72,9 +71,9 @@ const Filter = () => {
   return (
     <Box className={styles.filter}>
       <FormGroup>
-        <Grid container spacing={6}>
+        <Grid container spacing={6} sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
           <Grid item >
-            <FormControl sx={{ width: '100%' }}>
+            <FormControl >
               <FormLabel
                 className={styles.subTitle}>
                 Shape
@@ -195,14 +194,13 @@ const Filter = () => {
               </Box>
             </FormControl>
           </Grid>
+        </Grid>
+        <Grid container spacing={6} sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
 
-          {/* <Grid item
-            sx={{ display: 'flex', justifyContent: 'space-between' }}
-          > */}
           {sliders.map((slider, i) => (
-            <Grid item>
+            <Grid item sx={4}>
 
-              <FormControl sx={{ width: '100%' }}>
+              <FormControl >
                 <FormLabel
 
                   className={styles.subTitle}>
