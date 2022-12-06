@@ -9,6 +9,7 @@
   background: #f9fafb;
   display: flex;
   justify-content: space-around;
+  height: 50vh;
 }
 
 .secondDiv {
@@ -18,5 +19,11 @@
 
 .socialLogo {
   display: inherit;
+  justify-content: space-around;
+}
+
+.fistMenu {
+  display: flex;
+  flex-direction: column;
   justify-content: space-around;
 }

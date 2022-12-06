@@ -52,29 +52,360 @@ function Footer() {
               Diamonds
             </Typography>
           </Grid>
-          <Grid className="fistMenu">
-            <Typography>Fist Menu</Typography>
-            <typography className={styles.menuContain}>Feature</typography>
-            <typography>Enterprise</typography>
-            <typography>Security</typography>
-            <typography>Customer Storie</typography>
-            <typography>Pricing</typography>
-            <typography>Demo</typography>
-          </Grid>
-          <Grid className="secondMenu">
-            <Typography>Second Menu</Typography>
-          </Grid>
-          <Grid className="thirdMenu">
-            <Typography>Third Menu</Typography>
-          </Grid>
-          <Grid className="forthMenu">
-            <Typography>Fourth Menu</Typography>
-          </Grid>
+          <Box className={styles.fistMenu}>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 16,
+              }}
+            >
+              Fist Menu
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Feature
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Enterprise
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Security
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Customer Storie
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Pricing
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Demo
+            </Typography>
+          </Box>
+          <Box className={styles.fistMenu}>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 16,
+              }}
+            >
+              Second Menu
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Engineering
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Financial Service
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Sales
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              IT
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Customer Support
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Human Resources
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Media
+            </Typography>
+          </Box>
+          <Box className={styles.fistMenu}>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 16,
+              }}
+            >
+              Third Menu
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Tips
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Blogs
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Event
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Certified Program
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Help Center
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              API
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Download Template
+            </Typography>
+          </Box>
+          <Box className={styles.fistMenu}>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 16,
+              }}
+            >
+              Fourth Menu
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              About Us
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Leadership
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              News
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Media Kit
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Career
+            </Typography>
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#161D25",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+              }}
+            >
+              Documentation
+            </Typography>
+          </Box>
         </div>
         <Grid container spacing={2} className={styles.secondDiv}>
           <Grid item xs={8} className="">
             {" "}
-            Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
+            <Typography
+              sx={{
+                fontWeight: 400,
+                color: "#5A7184",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+                paddingLeft: 10,
+              }}
+            >
+              Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
+            </Typography>
           </Grid>
           <Grid item xs={4} className={styles.socialLogo}>
             <Box>
