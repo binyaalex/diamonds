@@ -14,6 +14,7 @@ import Slider from '@mui/material/Slider';
 
 //assets
 import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
+
 //data
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
 const shapesTwo = ["Oval", "Radiant", "Cushion", "Heart", "Asscher"]
@@ -34,35 +35,38 @@ const sliders = [
       ["D", "E", "F", "G", "H", "I", "j", "K"
       ],
     colors: [
-      '#E9D7FE, #E9D7FE 20%',
-      '#D6BBFB 20%, #D6BBFB 40%',
-      '#9E77ED 40%, #9E77ED 60%',
-      '#6941C6 60%, #6941C6 80%',
-      '#42307D 80%'
+      '#E9D7FE,#E9D7FE 16%',
+      '#D6BBFB 16%,#D6BBFB 30%',
+      '#B692F6 30%,#B692F6 44%',
+      '#9E77ED 44%,#9E77ED 58%',
+      '#7F56D9 58%,#7F56D9 70%',
+      '#6941C6 70%,#6941C6 84%',
+      '#53389E 84%',
     ]
   },
   {
     title: "Clarity",
     labels: [
-      "FL", "IF", "VVS2", "VS1", "VS2", "SI1", "SI3", "I1", "I2", "I3"
+      "FL", "IF", "VVS1", "VVS2", "VS1", "VS2", "SI1", "SI2", "SI3", "I1", "I2", "I3"
     ],
     colors: [
-      '#E9D7FE, #E9D7FE 20%',
-      '#D6BBFB 20%, #D6BBFB 40%',
-      '#9E77ED 40%, #9E77ED 60%',
-      '#6941C6 60%, #6941C6 80%',
-      '#42307D 80%'
+      'rgb(233, 215, 254),rgb(233, 215, 254) 9%',
+      'rgb(218, 199, 244) 9%,rgb(218, 199, 244) 18%',
+      'rgb(203, 183, 234) 18%,rgb(203, 183, 234) 27%',
+      'rgb(188, 167, 224)27%,rgb(188, 167, 224) 36%',
+      'rgb(173, 151, 214) 36%,rgb(173, 151, 214) 45%',
+      'rgb(158, 135, 204)45%,rgb(158, 135, 204) 54%',
+      'rgb(143, 119, 194)54%,rgb(143, 119, 194) 63%',
+      'rgb(128, 103, 184) 63%,rgb(128, 103, 184) 72%',
+      'rgb(113, 87, 174)72%,rgb(113, 87, 174) 81%',
+      'rgb(98, 71, 164)81%,rgb(98, 71, 164) 90%',
+      'rgb(83, 56, 158)90%',
     ]
   },
 ]
-// labels: [
-//   {value:0, label:"Exellent"},
-//    {value:1, label:"Very Good"}, 
-//    {value:2,label:"Good"}, 
-//    {value:3,label:"Fair"}, 
-//    {value:4"Poor"] 
-//   },
+
 const Filter = () => {
+
   const [size, setSize] = useState([0.94, 13.57]);
   const [cut, setCut] = useState([0, 5]);
   const [color, setColor] = useState([0, 8]);
@@ -71,14 +75,13 @@ const Filter = () => {
   return (
     <Box className={styles.filter}>
       <FormGroup>
-        <Grid container spacing={6} sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
+        <Grid container spacing={6} sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <Grid item >
             <FormControl >
               <FormLabel
                 className={styles.subTitle}>
                 Shape
               </FormLabel>
-
               <Grid item
                 sx={{ display: 'flex', justifyContent: "space-between", }}
               >
@@ -106,9 +109,8 @@ const Filter = () => {
               </Grid>
             </FormControl>
           </Grid>
-
           <Grid item >
-            <FormControl sx={{ width: '100%' }}>
+            <FormControl >
               <FormLabel
                 className={styles.subTitle}>
                 Size
@@ -134,7 +136,6 @@ const Filter = () => {
                   type="text"
                   inputProps={{ style: { textAlign: 'center' } }}
                   value={size[1]}
-
                 >
                 </InputBase>
               </Box>
@@ -164,45 +165,38 @@ const Filter = () => {
               </Box>
             </FormControl>
           </Grid>
-
           <Grid item >
             <FormControl sx={{ width: '100%' }}>
               <FormLabel
                 className={styles.subTitle}>
                 CertiFied
               </FormLabel>
-
               <Box>
                 <Button variant="outlined" className={styles.button}>
                   <Typography className={styles.buttonText}>
                     GIA
                   </Typography>
                 </Button>
-
                 <Button variant="outlined" className={styles.button}>
                   <Typography className={styles.buttonText}>
                     Other Labs
                   </Typography>
                 </Button>
-
                 <Button variant="outlined" className={styles.button}>
                   <Typography className={styles.buttonText}>
                     Uncertified
                   </Typography>
                 </Button>
-
               </Box>
             </FormControl>
           </Grid>
         </Grid>
-        <Grid container spacing={6} sx={{ width: '100%', display: 'flex', justifyContent: 'space-between' }}>
-
+        <Grid container spacing={6} >
           {sliders.map((slider, i) => (
-            <Grid item sx={4}>
-
-              <FormControl >
+            <Grid item lg={4} >
+              <FormControl
+                sx={{ width: '100%' }}>
                 <FormLabel
-
                   className={styles.subTitle}>
                   {slider.title}
                 </FormLabel>
@@ -221,7 +215,7 @@ const Filter = () => {
                 </Box>
                 <Slider
                   sx={{
-                    width: 300,
+                    // width: 300,
                     padding: '22px 0',
                     // color: '#4640DE',
                     height: '12px',
@@ -249,17 +243,12 @@ const Filter = () => {
                   min={0}
                   max={slider.labels.length - 1}
                 />
-
               </FormControl>
             </Grid>
           ))}
-
-
         </Grid>
       </FormGroup >
     </Box >
-
   )
 }
-
 export default Filter
