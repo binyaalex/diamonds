@@ -26,9 +26,7 @@ import Tab from '@mui/material/Tab';
 import { EightK } from '@mui/icons-material';
 
 //assets
-import { FiShoppingCart } from 'react-icons/fi';
-import { AiOutlineHeart } from 'react-icons/ai';
-import { IoNotificationsOutline } from 'react-icons/io5';
+
 import avatar from "../../assets/images/avatar.jpg"
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg"
 import { ReactComponent as Orders } from "../../assets/icons/Orders.svg"
@@ -37,6 +35,9 @@ import { ReactComponent as Offers } from "../../assets/icons/Offers.svg"
 import { ReactComponent as Settings } from "../../assets/icons/Settings.svg"
 import { ReactComponent as Support } from "../../assets/icons/Support.svg"
 import { ReactComponent as Out } from "../../assets/icons/Out.svg"
+import { ReactComponent as Cart } from "../../assets/icons/Cart.svg"
+import { ReactComponent as Heart } from "../../assets/icons/Heart.svg"
+import { ReactComponent as Bell } from "../../assets/icons/Bell.svg"
 
 
 const pages = ['Loose Diamonds', 'Fancy Color Diamonds ', 'Lorem'];
@@ -231,7 +232,7 @@ function Header() {
                 borderRadius: "8px",
                 ml: 2
               }}>
-              <FiShoppingCart />
+              <Cart />
             </IconButton>
           </Badge>
 
@@ -246,7 +247,7 @@ function Header() {
                 borderRadius: "8px",
                 ml: 2
               }}>
-              <AiOutlineHeart />
+              <Heart />
             </IconButton>
           </Badge>
 
@@ -255,10 +256,9 @@ function Header() {
               padding: "12px",
               width: "42px",
               height: "40px",
-              borderRadius: "8px",
               ml: 2
             }}>
-            <IoNotificationsOutline />
+            <Bell />
           </IconButton>
 
           <Tooltip title="My Profile">

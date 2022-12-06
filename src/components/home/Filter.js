@@ -11,9 +11,11 @@ import FormLabel from '@mui/material/FormLabel';
 import Button from '@mui/material/Button';
 import InputBase from '@mui/material/InputBase';
 import Slider from '@mui/material/Slider';
+import IconButton from '@mui/material/IconButton';
 
 //assets
 import { ReactComponent as Diamond } from "../../assets/icons/Diamond.svg"
+import { ReactComponent as Search } from "../../assets/icons/Search.svg"
 
 //data
 const shapesOne = ["Round", "Princess", "Pear", "Marquise", "Emerald"]
@@ -73,182 +75,202 @@ const Filter = () => {
   const [clarity, setClarity] = useState([0, 10]);
 
   return (
-    <Box className={styles.filter}>
-      <FormGroup>
-        <Grid container spacing={6} sx={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Grid item >
-            <FormControl >
-              <FormLabel
-                className={styles.subTitle}>
-                Shape
-              </FormLabel>
-              <Grid item
-                sx={{ display: 'flex', justifyContent: "space-between", }}
-              >
-                {shapesOne.map((shape) => (
-                  <Button variant="outlined" className={styles.button}>
-                    <Diamond />
-                    <Typography className={styles.buttonText}>
-                      {shape}
-                    </Typography>
-                  </Button>
-                )
-                )}
-              </Grid>
-              <Grid
-                sx={{ display: 'flex', justifyContent: "space-between", m: "12px 0" }}>
-                {shapesTwo.map((shape) => (
-                  <Button variant="outlined" className={styles.button}>
-                    <Diamond />
-                    <Typography className={styles.buttonText}>
-                      {shape}
-                    </Typography>
-                  </Button>
-                )
-                )}
-              </Grid>
-            </FormControl>
-          </Grid>
-          <Grid item >
-            <FormControl >
-              <FormLabel
-                className={styles.subTitle}>
-                Size
-              </FormLabel>
-              <Box
-                sx={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}
-              >
-                <InputBase
-                  className={styles.size}
-                  type="text"
-                  inputProps={{ style: { textAlign: 'center' } }}
-                  value={size[0]}
-                >
-                </InputBase>
-                <Typography
-                  sx={{
-                    color: '#7C8493'
-                    , m: "12px 30px"
-                  }}
-                >to</Typography>
-                <InputBase
-                  className={styles.size}
-                  type="text"
-                  inputProps={{ style: { textAlign: 'center' } }}
-                  value={size[1]}
-                >
-                </InputBase>
-              </Box>
-              <Box
-              >
-                <Slider
-                  sx={{
-                    width: 300,
-                    padding: '22px 0',
-                    color: '#4640DE',
-                    height: '12px',
-                    borderRadius: '0',
-                    '& .MuiSlider-thumb': {
-                      color: 'white',
-                      borderRadius: '2px',
-                      border: 'solid 1px #4640DE',
-                      width: '14px',
-                      height: '24px'
-                    }
-                  }}
-                  value={size}
-                  onChange={e => setSize(e.target.value)}
-                  min={0}
-                  step={0.01}
-                  max={20}
-                />
-              </Box>
-            </FormControl>
-          </Grid>
-          <Grid item >
-            <FormControl sx={{ width: '100%' }}>
-              <FormLabel
-                className={styles.subTitle}>
-                CertiFied
-              </FormLabel>
-              <Box>
-                <Button variant="outlined" className={styles.button}>
-                  <Typography className={styles.buttonText}>
-                    GIA
-                  </Typography>
-                </Button>
-                <Button variant="outlined" className={styles.button}>
-                  <Typography className={styles.buttonText}>
-                    Other Labs
-                  </Typography>
-                </Button>
-                <Button variant="outlined" className={styles.button}>
-                  <Typography className={styles.buttonText}>
-                    Uncertified
-                  </Typography>
-                </Button>
-              </Box>
-            </FormControl>
-          </Grid>
-        </Grid>
-        <Grid container spacing={6} >
-          {sliders.map((slider, i) => (
-            <Grid item lg={4} >
-              <FormControl
-                sx={{ width: '100%' }}>
+    <>
+      <Box sx={{
+        display: 'flex', justifyContent: 'space-between', pb: "34px"
+      }}>
+        <Typography className={styles.mainTitle}>
+          Loose Diamonds Search
+        </Typography>
+        <IconButton
+        // sx={{
+        //   padding: "12px",
+        //   width: "42px",
+        //   height: "40px",
+        //   borderRadius: "8px",
+        //   ml: 2
+        // }}
+        >
+          <Search />
+        </IconButton>
+      </Box>
+      <Box className={styles.filter}>
+        <FormGroup>
+          <Grid container spacing={6} sx={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Grid item >
+              <FormControl >
                 <FormLabel
                   className={styles.subTitle}>
-                  {slider.title}
+                  Shape
                 </FormLabel>
-                <Box
-                  sx={{
-                    display: 'flex', justifyContent: 'space-between',
-                  }}
+                <Grid item
+                  sx={{ display: 'flex', justifyContent: "space-between", }}
                 >
-                  {slider.labels.map((label) => (
-                    <Typography
-                      className={styles.subTitle}
-                    >
-                      {label}
-                    </Typography>
-                  ))}
-                </Box>
-                <Slider
-                  sx={{
-                    // width: 300,
-                    padding: '22px 0',
-                    // color: '#4640DE',
-                    height: '12px',
-                    borderRadius: '0',
-                    '& .MuiSlider-rail': {
-                      opacity: 1, backgroundImage: `linear-gradient(to right, ${slider.colors.join(', ')})`,
-                    },
-                    '& .MuiSlider-track': {
-                      color: 'transparent',
-                    },
-                    '& .MuiSlider-thumb': {
-                      color: 'white',
-                      borderRadius: '2px',
-                      border: 'solid 1px #4640DE',
-                      width: '16px',
-                      height: '24px'
-                    }
-                  }}
-                  value={i === 0 ? cut : i === 1 ? color : clarity}
-                  onChange={e => {
-                    i === 0 ? setCut(e.target.value) :
-                      i === 1 ? setColor(e.target.value) :
-                        setClarity(e.target.value)
-                  }}
-                  min={0}
-                  max={slider.labels.length - 1}
-                />
+                  {shapesOne.map((shape) => (
+                    <Button variant="outlined" className={styles.button}>
+                      <Diamond />
+                      <Typography className={styles.buttonText}>
+                        {shape}
+                      </Typography>
+                    </Button>
+                  )
+                  )}
+                </Grid>
+                <Grid
+                  sx={{ display: 'flex', justifyContent: "space-between", m: "12px 0" }}>
+                  {shapesTwo.map((shape) => (
+                    <Button variant="outlined" className={styles.button}>
+                      <Diamond />
+                      <Typography className={styles.buttonText}>
+                        {shape}
+                      </Typography>
+                    </Button>
+                  )
+                  )}
+                </Grid>
               </FormControl>
             </Grid>
-          ))}
-        </Grid>
-      </FormGroup >
-    </Box >
+            <Grid item >
+              <FormControl >
+                <FormLabel
+                  className={styles.subTitle}>
+                  Size
+                </FormLabel>
+                <Box
+                  sx={{ display: 'flex', width: '100%', alignItems: 'center', justifyContent: 'space-between' }}
+                >
+                  <InputBase
+                    className={styles.size}
+                    type="text"
+                    inputProps={{ style: { textAlign: 'center' } }}
+                    value={size[0]}
+                  >
+                  </InputBase>
+                  <Typography
+                    sx={{
+                      color: '#7C8493'
+                      , m: "12px 30px"
+                    }}
+                  >to</Typography>
+                  <InputBase
+                    className={styles.size}
+                    type="text"
+                    inputProps={{ style: { textAlign: 'center' } }}
+                    value={size[1]}
+                  >
+                  </InputBase>
+                </Box>
+                <Box
+                >
+                  <Slider
+                    sx={{
+                      width: 300,
+                      padding: '22px 0',
+                      color: '#4640DE',
+                      height: '12px',
+                      borderRadius: '0',
+                      '& .MuiSlider-thumb': {
+                        color: 'white',
+                        borderRadius: '2px',
+                        border: 'solid 1px #4640DE',
+                        width: '14px',
+                        height: '24px'
+                      }
+                    }}
+                    value={size}
+                    onChange={e => setSize(e.target.value)}
+                    min={0}
+                    step={0.01}
+                    max={20}
+                  />
+                </Box>
+              </FormControl>
+            </Grid>
+            <Grid item >
+              <FormControl sx={{ width: '100%' }}>
+                <FormLabel
+                  className={styles.subTitle}>
+                  CertiFied
+                </FormLabel>
+                <Box>
+                  <Button variant="outlined" className={styles.button}>
+                    <Typography className={styles.buttonText}>
+                      GIA
+                    </Typography>
+                  </Button>
+                  <Button variant="outlined" className={styles.button}>
+                    <Typography className={styles.buttonText}>
+                      Other Labs
+                    </Typography>
+                  </Button>
+                  <Button variant="outlined" className={styles.button}>
+                    <Typography className={styles.buttonText}>
+                      Uncertified
+                    </Typography>
+                  </Button>
+                </Box>
+              </FormControl>
+            </Grid>
+          </Grid>
+          <Grid container spacing={6} >
+            {sliders.map((slider, i) => (
+              <Grid item lg={4} >
+                <FormControl
+                  sx={{ width: '100%' }}>
+                  <FormLabel
+                    className={styles.subTitle}>
+                    {slider.title}
+                  </FormLabel>
+                  <Box
+                    sx={{
+                      display: 'flex', justifyContent: 'space-between',
+                    }}
+                  >
+                    {slider.labels.map((label) => (
+                      <Typography
+                        className={styles.subTitle}
+                      >
+                        {label}
+                      </Typography>
+                    ))}
+                  </Box>
+                  <Slider
+                    sx={{
+                      // width: 300,
+                      padding: '22px 0',
+                      // color: '#4640DE',
+                      height: '12px',
+                      borderRadius: '0',
+                      '& .MuiSlider-rail': {
+                        opacity: 1, backgroundImage: `linear-gradient(to right, ${slider.colors.join(', ')})`,
+                      },
+                      '& .MuiSlider-track': {
+                        color: 'transparent',
+                      },
+                      '& .MuiSlider-thumb': {
+                        color: 'white',
+                        borderRadius: '2px',
+                        border: 'solid 1px #4640DE',
+                        width: '16px',
+                        height: '24px'
+                      }
+                    }}
+                    value={i === 0 ? cut : i === 1 ? color : clarity}
+                    onChange={e => {
+                      i === 0 ? setCut(e.target.value) :
+                        i === 1 ? setColor(e.target.value) :
+                          setClarity(e.target.value)
+                    }}
+                    min={0}
+                    max={slider.labels.length - 1}
+                  />
+                </FormControl>
+              </Grid>
+            ))}
+          </Grid>
+        </FormGroup >
+      </Box >
+    </>
   )
 }
 export default Filter
