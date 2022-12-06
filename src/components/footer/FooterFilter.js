@@ -56,7 +56,7 @@ const FooterFiler = () => {
   return (
     <Box>
       <FormGroup>
-        <Grid  spacing={5}>
+        <Grid spacing={5}>
           <Grid className={styles.logo}>
             <Box
               sx={{
