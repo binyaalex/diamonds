@@ -13,6 +13,47 @@ import Instagram from "../../assets/images/instagram.svg";
 import Github from "../../assets/images/github.svg";
 import { ReactComponent as Diamond } from "../../assets/icons/logo.svg";
 
+// data
+
+const labels = ["First Menu", "Second Menu", "Third Menu", "Fourth Menu"];
+const firstMenuData = [
+  "Feature",
+  "Enterprise",
+  "Security",
+  "Customer Storie",
+  "Pricing",
+  "Demo",
+];
+
+const secondMenuData = [
+  "Engineering",
+  "Financial services",
+  "Sales",
+  "IT",
+  "Customer Support",
+  "Human Resources",
+  "Media",
+];
+
+const thirdMenuData = [
+  "Tips",
+  "blog",
+  "Event",
+  "Certified Program",
+  "Help Center",
+  "API",
+  "Download Template",
+];
+
+const fourthMenuData = [
+  "About Us",
+  "Leadership",
+  "News",
+  "Media Kit",
+  "Career",
+  "Documentation",
+];
+
 function Footer() {
   return (
     <>
@@ -60,374 +101,116 @@ function Footer() {
               paddingTop: 8,
             }}
           >
+            {/* lables */}
+            {labels.map((labels) => (
+              <Typography
+                sx={{
+                  fontWeight: 400,
+                  color: "#161D25",
+                  textDecoration: "none",
+                  fontFamily: ["Inter"],
+                  fontSize: 16,
+                  height: 0,
+                }}
+              >
+                {labels}
+              </Typography>
+            ))}
+            {/* lables */}
+
             <Typography>
               <Box
                 sx={{
                   display: "grid",
                   rowGap: 2,
-                  gridTemplateRows: "repeat(7, 1fr)",
+                  // gridTemplateRows: "repeat(7, 1fr)",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 16,
-                  }}
-                >
-                  First Manu
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Feature
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Enterprise
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Security
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Customer Storie
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Pricing
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Demo
-                </Typography>
+                {firstMenuData.map((firstMenuData) => (
+                  <Typography
+                    sx={{
+                      fontWeight: 400,
+                      color: "#161D25",
+                      textDecoration: "none",
+                      fontFamily: ["Inter"],
+                      fontSize: 14,
+                    }}
+                  >
+                    {firstMenuData}
+                  </Typography>
+                ))}
               </Box>
             </Typography>
+
             <Typography>
               <Box
                 sx={{
                   display: "grid",
                   rowGap: 2,
-                  gridTemplateRows: "repeat(8, 1fr)",
+                  // gridTemplateRows: "repeat(7, 1fr)",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 16,
-                  }}
-                >
-                  Second Manu
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Engineering
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Financial Services
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Sales
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  IT
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Customer Support
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Human Resources
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Media
-                </Typography>
+                {secondMenuData.map((secondMenuData) => (
+                  <Typography
+                    sx={{
+                      fontWeight: 400,
+                      color: "#161D25",
+                      textDecoration: "none",
+                      fontFamily: ["Inter"],
+                      fontSize: 14,
+                    }}
+                  >
+                    {secondMenuData}
+                  </Typography>
+                ))}
               </Box>
             </Typography>
+
             <Typography>
               <Box
                 sx={{
                   display: "grid",
                   rowGap: 2,
-                  gridTemplateRows: "repeat(8, 1fr)",
+                  // gridTemplateRows: "repeat(7, 1fr)",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 16,
-                  }}
-                >
-                  Third Manu
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Tips
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Blog
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Event
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Certified Program
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Help Center
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  API
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Download Template
-                </Typography>
+                {thirdMenuData.map((thirdMenuData) => (
+                  <Typography
+                    sx={{
+                      fontWeight: 400,
+                      color: "#161D25",
+                      textDecoration: "none",
+                      fontFamily: ["Inter"],
+                      fontSize: 14,
+                    }}
+                  >
+                    {thirdMenuData}
+                  </Typography>
+                ))}
               </Box>
             </Typography>
+
             <Typography>
               <Box
                 sx={{
                   display: "grid",
                   rowGap: 2,
-                  gridTemplateRows: "repeat(7, 1fr)",
+                  // gridTemplateRows: "repeat(7, 1fr)",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 16,
-                  }}
-                >
-                  Fourth Menu
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  About Us
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Leadership
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  News
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Media Kit
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Career
-                </Typography>
-                <Typography
-                  sx={{
-                    fontWeight: 400,
-                    color: "#161D25",
-                    textDecoration: "none",
-                    fontFamily: ["Inter"],
-                    fontSize: 14,
-                  }}
-                >
-                  Documentation
-                </Typography>
+                {fourthMenuData.map((fourthMenuData) => (
+                  <Typography
+                    sx={{
+                      fontWeight: 400,
+                      color: "#161D25",
+                      textDecoration: "none",
+                      fontFamily: ["Inter"],
+                      fontSize: 14,
+                    }}
+                  >
+                    {fourthMenuData}
+                  </Typography>
+                ))}
               </Box>
             </Typography>
           </Box>
