@@ -1,21 +1,14 @@
 import React, { useState } from 'react';
 import styles from '../../App.module.scss';
 import Filter from './Filter'
-//mui
-import Typography from '@mui/material/Typography';
-
-
-//assets
-
+import Results from './Results'
 
 const Home = () => {
 
     return (
         <>
-            <Typography className={styles.mainTitle}>
-                Loose Diamonds Search
-            </Typography>
             <Filter />
+            <Results />
         </>
     )
 }
