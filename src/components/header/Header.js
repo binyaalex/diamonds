@@ -28,7 +28,7 @@ import { EightK } from "@mui/icons-material";
 //assets
 
 import avatar from "../../assets/images/avatar.jpg";
-import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
+import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import { ReactComponent as Orders } from "../../assets/icons/Orders.svg";
 import { ReactComponent as Listings } from "../../assets/icons/Listings.svg";
 import { ReactComponent as Offers } from "../../assets/icons/Offers.svg";
