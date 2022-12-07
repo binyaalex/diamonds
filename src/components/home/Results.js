@@ -46,6 +46,8 @@ const columns = [
     field: 'size',
     headerName: 'Size',
     type: 'number',
+    headerAlign: 'left',
+    align: 'left',
     headerClassName: 'header'
   },
   {
@@ -76,7 +78,8 @@ const columns = [
   {
     field: 'fluorescence',
     headerName: 'Fluorescence',
-    headerClassName: 'header'
+    headerClassName: 'header',
+    width: 120
   },
   {
     field: 'certified',
@@ -87,6 +90,8 @@ const columns = [
     field: 'price',
     headerName: 'Price',
     type: 'number',
+    headerAlign: 'left',
+    align: 'left',
     headerClassName: 'header',
     renderCell: (params) => (<>{`$${params.row.price.toLocaleString()}`}</>),
   },
@@ -94,6 +99,8 @@ const columns = [
     field: 'ct',
     headerName: '$/Ct',
     type: 'number',
+    headerAlign: 'left',
+    align: 'left',
     headerClassName: 'header',
     renderCell: (params) => (<>{`$${params.row.ct}`}</>),
   },
@@ -101,6 +108,8 @@ const columns = [
     field: 'rap',
     headerName: '%Rap',
     type: 'number',
+    headerAlign: 'left',
+    align: 'left',
     headerClassName: 'header',
     renderCell: (params) => (<>{`${params.row.rap}%`}</>),
   },
@@ -158,8 +167,8 @@ const Results = () => {
         view === 'list'
           ?
 
-          <div variant="outlined"
-            style={{ height: '500px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px' }}>
+          <Box variant="outlined"
+            sx={{ height: '550px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
             <Box sx={{
               display: 'flex', justifyContent: 'left', p: "12px 16px"
             }}>
@@ -202,7 +211,7 @@ const Results = () => {
               rowsPerPageOptions={[5, 10, 20]}
               pagination
             />
-          </div>
+          </Box>
 
           : 'g'
       }
