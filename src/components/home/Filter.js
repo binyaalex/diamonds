@@ -264,7 +264,12 @@ const Filter = () => {
         </FormGroup >
         <Box sx={{ height: '1px', width: '100%', display: 'flex', justifyContent: 'center' }}>
           <Button variant="outlined" className={styles.button}
-            sx={{ position: 'relative', height: '40px' }}>
+            sx={{
+              position: 'relative', height: '40px',
+              '&:hover': {
+                backgroundColor: '#ffffff',
+              }
+            }}>
             <Sort />
             <Typography className={styles.largeButtonText}>
               Advanced Filters
