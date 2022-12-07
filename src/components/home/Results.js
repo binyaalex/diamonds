@@ -16,44 +16,115 @@ import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 //assets
 import { ReactComponent as List } from "../../assets/icons/List.svg"
 import { ReactComponent as Gallery } from "../../assets/icons/Gallery.svg"
+import { ReactComponent as Compare } from "../../assets/icons/Compare.svg"
+import { ReactComponent as Heart } from "../../assets/icons/Heart.svg"
+import { ReactComponent as Shape } from "../../assets/icons/Shape.svg"
+import { ReactComponent as Eye } from "../../assets/icons/Eye.svg"
 
 //data
 const columns = [
   {
-    field: 'id', headerName: 'ID', width: 70,
-    renderCell: () => (<List />), headerClassName: 'header'
+    field: 'compare',
+    headerName: 'Compare',
+    // width: 90,
+    renderCell: () => (<Compare />),
+    headerClassName: 'header'
   },
-  { field: 'firstName', headerName: 'First name', width: 130, headerClassName: 'header' },
-  { field: 'lastName', headerName: 'Last name', width: 130, headerClassName: 'header' },
   {
-    field: 'age',
-    headerName: 'Age',
+    field: 'favorite',
+    headerName: 'Favorite',
+    // width: 130, 
+    renderCell: () => (<Heart />),
+    headerClassName: 'header'
+  },
+
+  {
+    field: 'shape',
+    headerName: 'Shape',
+    // width: 90,
+    headerClassName: 'header',
+    renderCell: (params) => (<><Shape />{params.row.shape}</>),
+  },
+  {
+    field: 'size',
+    headerName: 'Size',
     type: 'number',
-    width: 90,
+    // width: 160,
     headerClassName: 'header'
   },
   {
-    field: 'fullName',
-    headerName: 'Full name',
-    description: 'This column has a value getter and is not sortable.',
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ''} ${params.row.lastName || ''}`,
+    field: 'color',
+    headerName: 'Color',
     headerClassName: 'header'
   },
+  {
+    field: 'clarity',
+    headerName: 'Clarity',
+    headerClassName: 'header'
+  },
+  {
+    field: 'cut',
+    headerName: 'Cut',
+    headerClassName: 'header'
+  },
+  {
+    field: 'polish',
+    headerName: 'Polish',
+    headerClassName: 'header'
+  },
+  {
+    field: 'symmetry',
+    headerName: 'Symmetry',
+    headerClassName: 'header'
+  },
+  {
+    field: 'fluorescence',
+    headerName: 'Fluorescence',
+    headerClassName: 'header'
+  },
+  {
+    field: 'certified',
+    headerName: 'Certified',
+    headerClassName: 'header'
+  },
+
+  {
+    field: 'price',
+    headerName: 'Price',
+    type: 'number',
+    headerClassName: 'header',
+    renderCell: (params) => (<>{`${params.row.price.toLocaleString()} $`}</>),
+  },
+  {
+    field: 'ct',
+    headerName: '$/Ct',
+    type: 'number',
+    headerClassName: 'header',
+    renderCell: (params) => (<>{`${params.row.ct} $`}</>),
+  },
+  {
+    field: 'rap',
+    headerName: '%Rap',
+    type: 'number',
+    headerClassName: 'header',
+    renderCell: (params) => (<>{`${params.row.rap}%`}</>),
+  },
+  {
+    field: 'watch',
+    renderCell: () => (<Eye />),
+    headerClassName: 'header'
+  },
+
 ];
 
 const rows = [
-  { id: "List", lastName: 'Snow', firstName: 'Jon', age: 35 },
-  { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 42 },
-  { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 45 },
-  { id: 4, lastName: 'Stark', firstName: 'Arya', age: 16 },
-  { id: 5, lastName: 'Targaryen', firstName: 'Daenerys', age: null },
-  { id: 6, lastName: 'Melisandre', firstName: null, age: 150 },
-  { id: 7, lastName: 'Clifford', firstName: 'Ferrara', age: 44 },
-  { id: 8, lastName: 'Frances', firstName: 'Rossini', age: 36 },
-  { id: 9, lastName: 'Roxie', firstName: 'Harvey', age: 65 },
+  { id: 1, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 2, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 3, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 4, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 5, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+
 ];
 
 const Results = () => {
@@ -93,8 +164,8 @@ const Results = () => {
         view === 'list'
           ?
 
-          <Paper variant="outlined"
-            style={{ height: '400px', width: '100%' }}>
+          <div variant="outlined"
+            style={{ height: '500px', width: '100%' }}>
             <Box sx={{
               display: 'flex', justifyContent: 'left', p: "12px 16px"
             }}>
@@ -137,7 +208,7 @@ const Results = () => {
               rowsPerPageOptions={[5, 10, 20]}
               pagination
             />
-          </Paper>
+          </div>
 
           : 'g'
       }
