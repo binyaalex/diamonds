@@ -26,14 +26,12 @@ const columns = [
   {
     field: 'compare',
     headerName: 'Compare',
-    // width: 90,
     renderCell: () => (<Compare />),
     headerClassName: 'header'
   },
   {
     field: 'favorite',
     headerName: 'Favorite',
-    // width: 130, 
     renderCell: () => (<Heart />),
     headerClassName: 'header'
   },
@@ -41,15 +39,13 @@ const columns = [
   {
     field: 'shape',
     headerName: 'Shape',
-    // width: 90,
     headerClassName: 'header',
-    renderCell: (params) => (<><Shape />{params.row.shape}</>),
+    renderCell: (params) => (<><Shape style={{ marginRight: '14px' }} />{' '}{params.row.shape}</>),
   },
   {
     field: 'size',
     headerName: 'Size',
     type: 'number',
-    // width: 160,
     headerClassName: 'header'
   },
   {
@@ -87,20 +83,19 @@ const columns = [
     headerName: 'Certified',
     headerClassName: 'header'
   },
-
   {
     field: 'price',
     headerName: 'Price',
     type: 'number',
     headerClassName: 'header',
-    renderCell: (params) => (<>{`${params.row.price.toLocaleString()} $`}</>),
+    renderCell: (params) => (<>{`$${params.row.price.toLocaleString()}`}</>),
   },
   {
     field: 'ct',
     headerName: '$/Ct',
     type: 'number',
     headerClassName: 'header',
-    renderCell: (params) => (<>{`${params.row.ct} $`}</>),
+    renderCell: (params) => (<>{`$${params.row.ct}`}</>),
   },
   {
     field: 'rap',
@@ -113,8 +108,7 @@ const columns = [
     field: 'watch',
     renderCell: () => (<Eye />),
     headerClassName: 'header'
-  },
-
+  }
 ];
 
 const rows = [
@@ -165,7 +159,7 @@ const Results = () => {
           ?
 
           <div variant="outlined"
-            style={{ height: '500px', width: '100%' }}>
+            style={{ height: '500px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px' }}>
             <Box sx={{
               display: 'flex', justifyContent: 'left', p: "12px 16px"
             }}>
@@ -201,7 +195,7 @@ const Results = () => {
               }}
               rows={rows}
               columns={columns}
-
+              autoPageSize='true'
               disableColumnMenu
               pageSize={pageSize}
               onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
