@@ -62,15 +62,9 @@ function Footer() {
           <Grid xs={8} className={styles.logo}>
             <Box
               sx={{
-                background:
-                  "linear-gradient(180deg, #FFFFFF 0%, #D0D5DD 100%), #FFFFFF",
-                border: "0.2px solid #D0D5DD",
+                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                 borderRadius: "8px",
-                width: "32px",
-                height: "32px",
                 display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
                 mr: 1,
               }}
             >
