@@ -18,7 +18,7 @@ import { ReactComponent as Gallery } from "../../assets/icons/Gallery.svg"
 const columns = [
   {
     field: 'id', headerName: 'ID', width: 70,
-    renderCell: () => <List />
+    renderCell: () => (<List />)
   },
   { field: 'firstName', headerName: 'First name', width: 130 },
   { field: 'lastName', headerName: 'Last name', width: 130 },
@@ -77,7 +77,6 @@ const Results = () => {
       {view === 'list'
         ?
         <Box style={{ height: 400, width: '100%' }}>
-
           <DataGrid
             sx={{ border: 'none' }}
             rows={rows}
