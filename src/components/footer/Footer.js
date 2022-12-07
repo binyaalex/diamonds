@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.scss";
-//mui
+
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
@@ -11,7 +11,7 @@ import Twitter from "../../assets/images/twitter.svg";
 import Linkedin from "../../assets/images/linkedin.svg";
 import Instagram from "../../assets/images/instagram.svg";
 import Github from "../../assets/images/github.svg";
-import { ReactComponent as Diamond } from "../../assets/icons/Logo.svg";
+import { ReactComponent as Diamond } from "../../assets/icons/logo.svg";
 
 function Footer() {
   return (
