@@ -1,7 +1,8 @@
+import React from 'react';
 import styles from '../ProductDetails.module.scss';
 import ProductGallery from './ProductGallery'
+import RegularButton from '../RegularButton';
 
-import Button from '@mui/material/Button';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import favorit from '../../../assets/images/favorit.png'
 
@@ -20,9 +21,9 @@ const ProductDetailsMain = () => {
                 <div className={styles.productContentLower}>
                     <div className={styles.productContentPrice}>$545,000</div>
                     <div className={styles.buttonsDiv}>
-                        <Button style={{color: '#5C6AC4', borderColor: '#5C6AC4'}} variant="outlined">Make an offer</Button>
-                        <Button style={{color: '#5C6AC4', borderColor: '#5C6AC4'}} variant="outlined">Buy Now</Button>
-                        <Button style={{backgroundColor: '#4640DE'}} variant="contained">Add to cart</Button>
+                        <RegularButton light={true} text='Make an offer' />
+                        <RegularButton light={true} text='Buy Now' />
+                        <RegularButton light={false} text='Add to cart' />
                         {/* <img src={favorit} /> */}
                         <FavoriteBorderIcon className={styles.favoritIcon} />
                     </div>

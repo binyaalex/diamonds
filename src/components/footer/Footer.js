@@ -200,6 +200,7 @@ function Footer() {
             alignItems: "center",
             flexGrow: 1,
             justifyContent: "space-around",
+            marginRight: 10,
           }}
         >
           <Box>
