@@ -10,7 +10,7 @@ const CardsHeader = ({componentWidth}) => {
             <Typography className={styles.secondryTitle}>
                 Recently Viewed
             </Typography>
-            <RegularButton />
+            <RegularButton light={true} text='View All' />
         </div>
     )
 }
