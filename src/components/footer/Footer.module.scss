@@ -1,17 +1,18 @@
 .mainWrapper {
   background: #f9fafb;
 }
-.logo {
-  display: flex;
-  padding-top: 50px;
-}
-.fistDiv {
-  margin-bottom: 20px;
-  background: #f9fafb;
+
+.footer {
+  padding: 0 8vw;
   display: flex;
   justify-content: space-around;
-  height: 70vh;
+  background: #f9fafb;
 }
+
+// .fistDiv {
+//   background: #f9fafb;
+//   height: 70vh;
+// }
 
 .secondDiv {
   //   border: 2px solid black;
@@ -20,6 +21,6 @@
 }
 
 .socialLogo {
-  display: inherit;
+  // display: inherit;
   justify-content: space-around;
 }
