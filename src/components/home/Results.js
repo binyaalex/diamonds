@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import styles from '../../App.module.scss';
 import { Link } from "react-router-dom";
 import CardList from '../cardList/CardList'
 
 //mui
 import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import Paper from '@mui/material/Paper';
 import { DataGrid } from '@mui/x-data-grid';
-import { styled } from '@mui/material/styles';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import { GridActionsCellItem, GridRowParams } from '@mui/x-data-grid';
+import { GridActionsCellItem } from '@mui/x-data-grid';
 
 //assets
 import { ReactComponent as List } from "../../assets/icons/List.svg"
@@ -142,7 +137,6 @@ const Results = () => {
     { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
     { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
     { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
-
   ];
 
   const [view, setView] = useState('list')
@@ -182,12 +176,9 @@ const Results = () => {
           </ToggleButton>
         </ToggleButtonGroup>
       </Box >
-      {/* {view === 'list' ? */}
       <Box variant="outlined"
         sx={{
-          // overflow: "auto",
-          // clear: 'both',
-          // height: 'auto',
+
           display: 'flex',
           flexDirection: 'column',
           minHeight: '460px',
@@ -195,7 +186,6 @@ const Results = () => {
           border: '1px solid #EAECF0',
           boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)',
           borderRadius: '8px',
-
         }}>
         <Box sx={{
           display: 'flex', justifyContent: 'left', p: "12px 16px"
@@ -224,32 +214,22 @@ const Results = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </Box >
-        {/* {filteredRows.length > 0 ? ( */}
         {filteredRows.length > 0 && view === 'list' ? (
           <DataGrid
             sx={{
               border: 'none',
-              // height: '100%',
-              // overflow: 'auto',
               '& .header': { backgroundColor: '#FCFCFD' }
             }}
             rows={filteredRows}
             columns={columns}
-            // autoPageSize={true}
             disableColumnMenu
             pageSize={pageSize}
             onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
             rowsPerPageOptions={[5, 10, 20]}
             pagination
-
-          // checkboxSelection
-          // components={{
-          //   BaseCheckbox: Compare
-          // }}
           />
         ) : (<CardList products={filteredRows} />)}
       </Box>
-
     </>
   )
 }
