@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from '../../App.module.scss';
 import { Link } from "react-router-dom";
+import CardList from '../cardList/CardList'
 
 //mui
 import Box from '@mui/material/Box';
@@ -174,63 +175,61 @@ const Results = () => {
           </ToggleButton>
         </ToggleButtonGroup>
       </Box >
-      {
-        view === 'list'
-          ?
+      {/* {view === 'list' ? */}
+      <Box variant="outlined"
+        sx={{ height: '550px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
+        <Box sx={{
+          display: 'flex', justifyContent: 'left', p: "12px 16px"
+        }}>
+          <ToggleButtonGroup
+            value={isAll}
+            exclusive
+            onChange={e => setIsAll(e.target.value)}
+            aria-label="text alignment"
+            sx={{
+              '&>*': {
+                p: '10px 16px',
+                textTransform: 'none',
+                color: '#344054',
+                '&.Mui-selected': {
+                  backgroundColor: '#F9FAFB',
+                }
+              }
+            }}
+          >
+            <ToggleButton value='all' aria-label="left aligned" >
+              {'All Diamonds (12,345)'}
+            </ToggleButton>
+            <ToggleButton value='some' aria-label="centered">
+              {'Comparison (0)'}
+            </ToggleButton>
+          </ToggleButtonGroup>
+        </Box >
+        {/* {filteredRows.length > 0 ? ( */}
+        {view === 'list' ? (
 
-          <Box variant="outlined"
-            sx={{ height: '550px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
-            <Box sx={{
-              display: 'flex', justifyContent: 'left', p: "12px 16px"
-            }}>
-              <ToggleButtonGroup
-                value={isAll}
-                exclusive
-                onChange={e => setIsAll(e.target.value)}
-                aria-label="text alignment"
-                sx={{
-                  '&>*': {
-                    p: '10px 16px',
-                    textTransform: 'none',
-                    color: '#344054',
-                    '&.Mui-selected': {
-                      backgroundColor: '#F9FAFB',
-                    }
-                  }
-                }}
-              >
-                <ToggleButton value='all' aria-label="left aligned" >
-                  {'All Diamonds (12,345)'}
-                </ToggleButton>
-                <ToggleButton value='some' aria-label="centered">
-                  {'Comparison (0)'}
-                </ToggleButton>
-              </ToggleButtonGroup>
-            </Box >
-            {filteredRows.length > 0 ? (
-              <DataGrid
-                sx={{
-                  border: 'none',
-                  '& .header': { backgroundColor: '#FCFCFD' }
-                }}
-                rows={filteredRows}
-                columns={columns}
-                autoPageSize={true}
-                disableColumnMenu
-                pageSize={pageSize}
-                onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-                rowsPerPageOptions={[5, 10, 20]}
-                pagination
-              // checkboxSelection
-              // components={{
-              //   BaseCheckbox: Compare
-              // }}
-              />
-            ) : ('')}
-          </Box>
+          <DataGrid
+            sx={{
+              border: 'none',
+              '& .header': { backgroundColor: '#FCFCFD' }
+            }}
+            rows={filteredRows}
+            columns={columns}
+            autoPageSize={true}
+            disableColumnMenu
+            pageSize={pageSize}
+            onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+            rowsPerPageOptions={[5, 10, 20]}
+            pagination
+          // checkboxSelection
+          // components={{
+          //   BaseCheckbox: Compare
+          // }}
+          />
+        ) : (<CardList />)}
+      </Box>
 
-          : 'g'
-      }
+      {/* : <CardList />      } */}
     </>
   )
 }
