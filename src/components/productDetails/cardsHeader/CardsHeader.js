@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styles from './CardsHeader.module.scss';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+import RegularButton from '../RegularButton';
 
 const CardsHeader = ({componentWidth}) => {
   
@@ -10,7 +10,7 @@ const CardsHeader = ({componentWidth}) => {
             <Typography className={styles.secondryTitle}>
                 Recently Viewed
             </Typography>
-            <Button style={{color: '#5C6AC4', borderColor: '#5C6AC4'}} variant="outlined">View All</Button>
+            <RegularButton />
         </div>
     )
 }

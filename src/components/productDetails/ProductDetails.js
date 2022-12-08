@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from 'react';
 import styles from './ProductDetails.module.scss';
 import ProductDetailsMain from './productDetailsMain/ProductDetailsMain'
 import CardList from '../cardList/CardList'
-import CardsHeader from './productDetailsMain/cardsHeader/CardsHeader';
+import CardsHeader from './cardsHeader/CardsHeader';
 
 const ProductDetails = () => {
     const [componentWidth, setComponentWidth] = useState(null);
