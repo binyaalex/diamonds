@@ -15,7 +15,7 @@ export default function CardList(props) {
   const cardsArr = [1, 2, 3, 4];
 
   return (
-    <Grid style={{marginTop: '32px'}} justifyContent="center" container spacing={5}>
+    <Grid style={{marginTop: '-48px'}} container spacing={10}>
         {cardsArr.length > 0
         ? cardsArr.map((id) => (
             <Grid key={id} item>

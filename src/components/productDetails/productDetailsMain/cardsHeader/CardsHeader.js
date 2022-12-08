@@ -1,10 +1,12 @@
+import React, { useEffect, useState } from 'react';
 import styles from './CardsHeader.module.scss';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-const CardsHeader = () => {
+const CardsHeader = ({componentWidth}) => {
+  
     return (
-        <div style={{display: 'flex', justifyContent: 'space between'}}>
+        <div className={styles.cardsHeader} style={{paddingRight: `${componentWidth -1364}px`}}>
             <Typography className={styles.secondryTitle}>
                 Recently Viewed
             </Typography>
