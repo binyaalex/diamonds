@@ -15,10 +15,10 @@ export default function CardList({ products }) {
   const cardsArr = products || [1, 2, 3, 4];
   // console.log(cardsArr);
   return (
-    <Grid style={{ marginTop: '-48px' }} container spacing={3}>
+    <Grid sx={{ p: '16px' }} container spacing={3} >
       {cardsArr.length > 0
         ? cardsArr.map((product, i) => (
-          <Grid key={i} item>
+          <Grid key={i} item xs={3}>
             <Card img={cardDiamond} product={product} />
           </Grid>
         ))
