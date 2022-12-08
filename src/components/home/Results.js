@@ -136,6 +136,13 @@ const Results = () => {
     { id: 4, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
     { id: 5, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
     { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+    { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+
   ];
 
   const [view, setView] = useState('list')
@@ -167,17 +174,29 @@ const Results = () => {
             }
           }}
         >
-          <ToggleButton value="list" aria-label="left aligned">
+          <ToggleButton value="list" aria-label="list">
             <List />
           </ToggleButton>
-          <ToggleButton value="gallery" aria-label="centered">
+          <ToggleButton value="gallery" aria-label="gallery">
             <Gallery />
           </ToggleButton>
         </ToggleButtonGroup>
       </Box >
       {/* {view === 'list' ? */}
       <Box variant="outlined"
-        sx={{ height: '550px', width: '100%', border: '1px solid #EAECF0', boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)', borderRadius: '8px', display: 'flex', flexDirection: 'column' }}>
+        sx={{
+          // overflow: "auto",
+          // clear: 'both',
+          // height: 'auto',
+          display: 'flex',
+          flexDirection: 'column',
+          minHeight: '460px',
+          width: '100%',
+          border: '1px solid #EAECF0',
+          boxShadow: '0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)',
+          borderRadius: '8px',
+
+        }}>
         <Box sx={{
           display: 'flex', justifyContent: 'left', p: "12px 16px"
         }}>
@@ -206,21 +225,23 @@ const Results = () => {
           </ToggleButtonGroup>
         </Box >
         {/* {filteredRows.length > 0 ? ( */}
-        {view === 'list' ? (
-
+        {filteredRows.length > 0 && view === 'list' ? (
           <DataGrid
             sx={{
               border: 'none',
+              // height: '100%',
+              // overflow: 'auto',
               '& .header': { backgroundColor: '#FCFCFD' }
             }}
             rows={filteredRows}
             columns={columns}
-            autoPageSize={true}
+            // autoPageSize={true}
             disableColumnMenu
             pageSize={pageSize}
             onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
             rowsPerPageOptions={[5, 10, 20]}
             pagination
+
           // checkboxSelection
           // components={{
           //   BaseCheckbox: Compare
@@ -229,7 +250,6 @@ const Results = () => {
         ) : (<CardList products={filteredRows} />)}
       </Box>
 
-      {/* : <CardList />      } */}
     </>
   )
 }
