@@ -10,17 +10,17 @@ import Card from "./Card";
 
 import cardDiamond from "../../assets/images/cardDiamond.png";
 
-export default function CardList(props) {
+export default function CardList({ products }) {
   const navigate = useNavigate();
-  const cardsArr = [1, 2, 3, 4];
-
+  const cardsArr = products || [1, 2, 3, 4];
+  // console.log(cardsArr);
   return (
-    <Grid style={{marginTop: '-48px'}} container spacing={10}>
-        {cardsArr.length > 0
-        ? cardsArr.map((id) => (
-            <Grid key={id} item>
-                <Card img={cardDiamond} />
-            </Grid>
+    <Grid style={{ marginTop: '-48px' }} container spacing={3}>
+      {cardsArr.length > 0
+        ? cardsArr.map((product, i) => (
+          <Grid key={i} item>
+            <Card img={cardDiamond} product={product} />
+          </Grid>
         ))
         : "No merchants"}
     </Grid>
