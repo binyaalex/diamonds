@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from '../../App.module.scss';
 
 //mui
@@ -7,6 +7,7 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import Paper from '@mui/material/Paper';
 import { DataGrid } from '@mui/x-data-grid';
+import { styled } from '@mui/material/styles';
 
 
 
@@ -26,7 +27,8 @@ const columns = [
   {
     field: 'compare',
     headerName: 'Compare',
-    renderCell: () => (<Compare />),
+    type: 'boolean',
+    renderCell: (params) => (<Compare stroke={params.row.compare ? '#2E90FA' : 'black'} fillOpacity={0} />),
     headerClassName: 'header'
   },
   {
@@ -121,20 +123,24 @@ const columns = [
 ];
 
 const rows = [
-  { id: 1, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 1, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37, compare: true },
   { id: 2, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
-  { id: 3, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
+  { id: 3, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37, compare: true },
   { id: 4, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
   { id: 5, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
   { id: 6, shape: 'Round', size: 11.01, color: 'F', clarity: 'FL', cut: 'Very Good', polish: 'G', symmetry: 'VG', fluorescence: 'Very Strong', certified: 'GIA', price: 543345, ct: 186, rap: -37 },
-
 ];
 
 const Results = () => {
   const [view, setView] = useState('list')
   const [isAll, setIsAll] = useState('all')
   const [pageSize, setPageSize] = useState(5);
+  const [filteredRows, setFilteredRows] = useState([...rows]);
 
+  useEffect(() => {
+    const newRows = rows.filter((row) => row.compare);
+    isAll === 'all' ? setFilteredRows(rows) : setFilteredRows(newRows)
+  }, [isAll])
 
   return (
     <>
@@ -188,29 +194,34 @@ const Results = () => {
                   }
                 }}
               >
-                <ToggleButton value="all" aria-label="left aligned" >
+                <ToggleButton value='all' aria-label="left aligned" >
                   {'All Diamonds (12,345)'}
                 </ToggleButton>
-                <ToggleButton value="compare" aria-label="centered">
+                <ToggleButton value='some' aria-label="centered">
                   {'Comparison (0)'}
                 </ToggleButton>
               </ToggleButtonGroup>
             </Box >
-
-            <DataGrid
-              sx={{
-                border: 'none',
-                '& .header': { backgroundColor: '#FCFCFD' }
-              }}
-              rows={rows}
-              columns={columns}
-              autoPageSize='true'
-              disableColumnMenu
-              pageSize={pageSize}
-              onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
-              rowsPerPageOptions={[5, 10, 20]}
-              pagination
-            />
+            {filteredRows.length > 0 ? (
+              <DataGrid
+                sx={{
+                  border: 'none',
+                  '& .header': { backgroundColor: '#FCFCFD' }
+                }}
+                rows={filteredRows}
+                columns={columns}
+                autoPageSize={true}
+                disableColumnMenu
+                pageSize={pageSize}
+                onPageSizeChange={(newPageSize) => setPageSize(newPageSize)}
+                rowsPerPageOptions={[5, 10, 20]}
+                pagination
+              // checkboxSelection
+              // components={{
+              //   BaseCheckbox: Compare
+              // }}
+              />
+            ) : ('')}
           </Box>
 
           : 'g'
