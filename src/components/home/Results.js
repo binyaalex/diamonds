@@ -226,7 +226,7 @@ const Results = () => {
           //   BaseCheckbox: Compare
           // }}
           />
-        ) : (<CardList />)}
+        ) : (<CardList products={filteredRows} />)}
       </Box>
 
       {/* : <CardList />      } */}

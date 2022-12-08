@@ -1,5 +1,8 @@
 import styles from './Card.module.scss';
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
+
+//mui
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -11,6 +14,7 @@ import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 
+//assets
 import favorit from '../../assets/images/cardFavorit.png'
 import rare from '../../assets/images/rare.png'
 
@@ -29,15 +33,20 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   }),
 }));
 
-export default function RecipeReviewCard({img}) {
+export default function RecipeReviewCard({ img, product }) {
   const [expanded, setExpanded] = React.useState(false);
+  const navigate = useNavigate();
+  // console.log(product.price);
+  const price = product.price?.toLocaleString() || null
+  // console.log(price);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 279, border: '1px solid #EAECF0' }}>
+    <Card sx={{ maxWidth: 279, border: '1px solid #EAECF00', cursor: 'pointer' }} onClick={() => navigate('/productdetails')}
+    >
       <CardMedia
         className={styles.cardImg}
         component="img"
@@ -47,21 +56,22 @@ export default function RecipeReviewCard({img}) {
       />
       <CardContent className={styles.cardContent}>
         <CardActions className={styles.cardIcons} disableSpacing>
-            <IconButton aria-label="share">
-                <img src={rare} />
-            </IconButton>
-            <IconButton aria-label="add to favorites">
-                <img src={favorit} />
-            </IconButton>
+          <IconButton aria-label="share">
+            <img src={rare} />
+          </IconButton>
+          <IconButton aria-label="add to favorites">
+            <img src={favorit} />
+          </IconButton>
         </CardActions>
         <Typography className={styles.cardPrice} variant="body1" color="text.secondary">
-            $302,876
+          {`$ ${price ? price : '302,876'}`}
+          {/* {`$${product?.price.toLocaleString() || '32,876'}`} */}
         </Typography>
         <Typography className={styles.cardTitle} variant="body2" color="text.secondary">
-            5.01-Carat Asscher Cut Diamond
+          5.01-Carat Asscher Cut Diamond
         </Typography>
         <Typography className={styles.cardDespriction} variant="body2" color="text.secondary">
-            D  | FL | Very Good
+          {product?.color || 'D'}  | {product?.clarity || 'FL'} | {product?.cut || 'Very Good'}
         </Typography>
       </CardContent>
     </Card>
