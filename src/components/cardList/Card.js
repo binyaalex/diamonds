@@ -13,6 +13,7 @@ import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
+
 //assets
 import favorit from '../../assets/images/cardFavorit.png'
 import rare from '../../assets/images/rare.png'
