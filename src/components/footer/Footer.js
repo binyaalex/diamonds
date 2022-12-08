@@ -186,7 +186,10 @@ function Footer() {
             textDecoration: "none",
             fontFamily: ["Inter"],
             fontSize: 14,
-            paddingLeft: 16,
+            display: "flex",
+            alignItems: "center",
+            flexGrow: 2,
+            marginLeft: 10,
           }}
         >
           Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
@@ -194,6 +197,9 @@ function Footer() {
         <Box
           sx={{
             display: "flex",
+            alignItems: "center",
+            flexGrow: 1,
+            justifyContent: "space-around",
           }}
         >
           <Box>
