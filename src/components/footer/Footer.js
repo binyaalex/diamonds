@@ -62,9 +62,9 @@ function Footer() {
           <Grid xs={8} className={styles.logo}>
             <Box
               sx={{
-                boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
+                // boxShadow: '0px 1px 2px rgba(16, 24, 40, 0.05)',
                 borderRadius: "8px",
-                display: "flex",
+                // display: "flex",
                 mr: 1,
               }}
             >
