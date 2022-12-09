@@ -8,18 +8,16 @@ import Gia from './gia/Gia';
 const ProductDetails = () => {
     const [componentWidth, setComponentWidth] = useState(null);
 
-    const ref = useRef(null);
-      useEffect(() => {
-      console.log(ref.current.offsetWidth)
-      setComponentWidth(ref.current.offsetWidth)
-    }, [ref.current]); // eslint-disable-line
-
+    const getCardWidth = (cardWidth) => {
+        setComponentWidth(cardWidth)
+    }
+    
     return (
-        <div className={styles.ProductDetails} ref={ref} >
+        <div className={styles.ProductDetails} >
             <ProductDetailsMain />
             <Gia />
             <CardsHeader componentWidth={componentWidth} />
-            <CardList />
+            <CardList getCardWidth={getCardWidth} />
         </div>
     )
 }

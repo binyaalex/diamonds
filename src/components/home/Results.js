@@ -228,7 +228,7 @@ const Results = () => {
             rowsPerPageOptions={[5, 10, 20]}
             pagination
           />
-        ) : (<CardList products={filteredRows} />)}
+        ) : (<CardList products={filteredRows} getCardWidth={() => console.log('we dont need that function here')} />)}
       </Box>
     </>
   )
