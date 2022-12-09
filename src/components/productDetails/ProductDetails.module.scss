@@ -74,3 +74,17 @@
 .css-sghohy-MuiButtonBase-root-MuiButton-root {
     background-color: #4640DE;
 }
+
+.listRow:nth-child(odd) {
+    background-color: #F9FAFB;
+}
+
+.tablesGrid {
+    padding-left: 0 !important;
+    justify-content: space-between;
+}
+
+.tablesGridItem {
+    max-width: 47% !important;
+    flex-basis: 47% !important;
+}

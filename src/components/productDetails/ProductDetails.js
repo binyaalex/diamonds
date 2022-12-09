@@ -3,6 +3,7 @@ import styles from './ProductDetails.module.scss';
 import ProductDetailsMain from './productDetailsMain/ProductDetailsMain'
 import CardList from '../cardList/CardList'
 import CardsHeader from './cardsHeader/CardsHeader';
+import Gia from './gia/Gia';
 
 const ProductDetails = () => {
     const [componentWidth, setComponentWidth] = useState(null);
@@ -16,6 +17,7 @@ const ProductDetails = () => {
     return (
         <div className={styles.ProductDetails} ref={ref} >
             <ProductDetailsMain />
+            <Gia />
             <CardsHeader componentWidth={componentWidth} />
             <CardList />
         </div>
