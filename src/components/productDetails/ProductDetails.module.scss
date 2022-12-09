@@ -4,6 +4,7 @@
 
 .ProductDetailsMain {
     display: flex;
+    padding-bottom: 40px;
 }
 
 .productContent {
@@ -93,4 +94,8 @@
 .tablesGridItem {
     max-width: 47% !important;
     flex-basis: 47% !important;
+}
+
+.giaImg {
+    padding: 36px 0 24px;
 }
