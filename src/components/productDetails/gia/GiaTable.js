@@ -5,6 +5,7 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import IconButton from '@mui/material/IconButton';
+import Typography from '@mui/material/Typography';
 import ErrorOutlineIcon from '@mui/icons-material/ErrorOutline';
 
 function GiaTable({data}) {
@@ -16,16 +17,16 @@ function GiaTable({data}) {
           key={i}
           disableGutters
           secondaryAction={
-            <IconButton aria-label="comment">
-              <div>{item.value}</div>
+            <IconButton aria-label="comment" style={{ paddingRight: '28px', color: '#161D25' }} >
+              <Typography>{item.value}</Typography>
               {item.icon ?
-                <ErrorOutlineIcon /> :
+                <ErrorOutlineIcon style={{ paddingLeft: '10px' }} /> :
                 ""
               }
             </IconButton>
           }
         >
-          <ListItemText primary={item.feild} />
+          <ListItemText primary={item.feild} style={{ color: '#959EAD' }} />
         </ListItem> 
       ))}
     </List>

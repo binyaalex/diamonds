@@ -7,12 +7,12 @@ import Grid from '@mui/material/Grid'; // Grid version 1
 const table = {
     table1: [
         {
-            feild: 'shape',
+            feild: 'Shape',
             value: 'round',
             icon: false,
         },
         {
-            feild: 'cut',
+            feild: 'Cut',
             value: 'Very Good',
             icon: true,
         },
