@@ -3,6 +3,7 @@ import styles from '../ProductDetails.module.scss';
 import GiaTable from './GiaTable'
 
 import Grid from '@mui/material/Grid'; // Grid version 1
+import SecondryTitle from '../../repeat/SecondryTitle';
 
 const table = {
     table1: [
@@ -94,6 +95,7 @@ const table = {
 const Gia = () => {
     return (
         <>
+            <SecondryTitle text='Diamond Details' />
             <Grid className={styles.tablesGrid} sx={{ p: '16px' }} container >
                 <Grid key={1} item xs={3} className={styles.tablesGridItem}>
                     <GiaTable data={table.table1} />
