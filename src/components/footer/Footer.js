@@ -105,7 +105,7 @@ function Footer() {
         <Box
           sx={{
             display: "flex",
-            paddingTop: 8,
+            paddingTop: 5,
           }}
         >
           <Box
@@ -143,7 +143,7 @@ function Footer() {
           </Typography>
         </Box>
 
-        <Box sx={{ flexGrow: 1 }}>
+        <Box sx={{ flexGrow: 1, paddingTop: 5 }}>
           <Grid
             container
             spacing={{ xs: 2, md: 3 }}
@@ -164,6 +164,11 @@ function Footer() {
                       gridTemplateColumns: "repeat(1, 1fr)",
                       gridTemplateRows: "repeat(2)",
                       gap: 1,
+                      marginBottom: 1.5,
+                      fontWeight: 400,
+                      color: "#161D25",
+                      fontFamily: ["Inter"],
+                      fontSize: 16,
                     }}
                   >
                     {labels3.header}
@@ -177,14 +182,86 @@ function Footer() {
                       gap: 1,
                     }}
                   >
-                    <Typography>{labels3.items[0]}</Typography>
-                    <Typography>{labels3.items[1]}</Typography>
-                    <Typography>{labels3.items[2]}</Typography>
-                    <Typography>{labels3.items[3]}</Typography>
-                    <Typography>{labels3.items[4]}</Typography>
-                    <Typography>{labels3.items[5]}</Typography>
-                    <Typography>{labels3.items[6]}</Typography>
-                    <Typography>{labels3.items[7]}</Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[0]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[1]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[2]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[3]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[4]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[5]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[6]}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 14,
+                      }}
+                    >
+                      {labels3.items[7]}
+                    </Typography>
                   </Box>
                 </Grid>
               </>
