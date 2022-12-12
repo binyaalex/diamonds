@@ -60,27 +60,28 @@ export default function RecipeReviewCard({ img, product }) {
       onClick={() => navigate('/productdetails')}
     >
       {product.sale ? 
-      <Box
-        sx={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          zIndex: 1,
-          backgroundColor: 'rgb(33,43,54, 0.2)',
-          display: 'flex',
-          justifyContent: 'center',
-        }}
-      >
-        <IconButton aria-label="" className={styles.saleIcon}>
-          <img src={sale} />
-        </IconButton>
-        <IconButton aria-label="">
-          <img src={eye} />
-        </IconButton>
-        <IconButton aria-label="">
-          <img src={cart} />
-        </IconButton>
-      </Box>
+        <Box
+          sx={{
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            zIndex: 1,
+            backgroundColor: 'rgb(33,43,54, 0.2)',
+            display: 'flex',
+            justifyContent: 'center',
+            paddingTop: 1,
+          }}
+        >
+          <IconButton aria-label="" className={styles.saleIcon}>
+            <img src={sale} />
+          </IconButton>
+          <IconButton aria-label="">
+            <img src={eye} />
+          </IconButton>
+          <IconButton aria-label="">
+            <img src={cart} />
+          </IconButton>
+        </Box>
       : ""}
       
       <CardMedia
