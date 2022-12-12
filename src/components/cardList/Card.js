@@ -94,8 +94,10 @@ export default function RecipeReviewCard({ img, product }) {
       <CardContent className={styles.cardContent}>
         <CardActions className={styles.cardIcons} disableSpacing>
           <IconButton aria-label="">
-            <img src={rare} />
-          </IconButton>
+            {product.rare ? 
+              <img src={rare} />
+            : ""}
+      </IconButton>
           <IconButton aria-label="add to favorites">
             <img src={favorit} />
           </IconButton>
