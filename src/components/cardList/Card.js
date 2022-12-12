@@ -5,18 +5,19 @@ import { useNavigate } from "react-router-dom";
 //mui
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
-import CardHeader from '@mui/material/CardHeader';
 import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
+import Box from '@mui/material/Box';
 
 //assets
 import favorit from '../../assets/images/cardFavorit.png'
 import rare from '../../assets/images/rare.png'
+import sale from '../../assets/images/Sale.png'
+import eye from '../../assets/images/eye.png'
+import cart from '../../assets/images/cart.png'
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -36,17 +37,52 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export default function RecipeReviewCard({ img, product }) {
   const [expanded, setExpanded] = React.useState(false);
   const navigate = useNavigate();
-  // console.log(product.price);
+  // console.log(product);
   const price = product.price?.toLocaleString() || null
-  // console.log(price);
+  // console.log(img);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    <Card sx={{ maxWidth: 279, border: '1px solid #EAECF00', cursor: 'pointer' }} onClick={() => navigate('/productdetails')}
+    <Card  
+      sx = {{ 
+        maxWidth: 279, 
+        border: '1px solid #EAECF00', 
+        cursor: 'pointer',
+        position: 'relative',
+        // '&:hover': {
+        //   backgroundColor: '#212B36',
+        //   opacity: 0.2,
+        // },
+      }} 
+      onClick={() => navigate('/productdetails')}
     >
+      {product.sale ? 
+      <Box
+        sx={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          zIndex: 1,
+          backgroundColor: 'rgb(33,43,54, 0.2)',
+          display: 'flex',
+          justifyContent: 'center',
+        }}
+      >
+        <IconButton aria-label="" className={styles.saleIcon}>
+          <img src={sale} />
+        </IconButton>
+        <IconButton aria-label="">
+          <img src={eye} />
+        </IconButton>
+        <IconButton aria-label="">
+          <img src={cart} />
+        </IconButton>
+      </Box>
+      : ""}
+      
       <CardMedia
         className={styles.cardImg}
         component="img"
@@ -56,7 +92,7 @@ export default function RecipeReviewCard({ img, product }) {
       />
       <CardContent className={styles.cardContent}>
         <CardActions className={styles.cardIcons} disableSpacing>
-          <IconButton aria-label="share">
+          <IconButton aria-label="">
             <img src={rare} />
           </IconButton>
           <IconButton aria-label="add to favorites">
