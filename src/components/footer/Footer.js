@@ -120,6 +120,7 @@ function Footer() {
               justifyContent: "center",
               alignItems: "center",
               mr: 1,
+              marginBottom: 3,
             }}
           >
             <Diamond />
@@ -131,7 +132,7 @@ function Footer() {
             href="/"
             sx={{
               mr: 2,
-              display: { xs: "none", md: "flex" },
+              display: { md: "flex" },
               fontWeight: 600,
               color: "#101828",
               textDecoration: "none",
@@ -150,26 +151,45 @@ function Footer() {
           >
             {labels3.map((labels3) => (
               <>
-                <Grid item xs={2} sm={4} md>
+                {/* <Grid item xs={2} sm={4} md>
                   {labels3.header}
-                  <Grid item xs={2} sm={4} md>
-                    {labels3.items}
-                  </Grid>
+                  <Grid>{labels3.items}</Grid>
+                </Grid>
+                 */}
+                <Grid item xs={2} sm={4} md>
+                  <Box
+                    sx={{
+                      display: "grid",
+                      gridAutoFlow: "row",
+                      gridTemplateColumns: "repeat(1, 1fr)",
+                      gridTemplateRows: "repeat(2)",
+                      gap: 1,
+                    }}
+                  >
+                    {labels3.header}
+
+                    {/* <Grid>{labels3.items}</Grid> */}
+                  </Box>
+                  <Box
+                    sx={{
+                      display: "grid",
+                      gridTemplateRows: "repeat(8, 1fr)",
+                      gap: 1,
+                    }}
+                  >
+                    <Typography>{labels3.items[0]}</Typography>
+                    <Typography>{labels3.items[1]}</Typography>
+                    <Typography>{labels3.items[2]}</Typography>
+                    <Typography>{labels3.items[3]}</Typography>
+                    <Typography>{labels3.items[4]}</Typography>
+                    <Typography>{labels3.items[5]}</Typography>
+                    <Typography>{labels3.items[6]}</Typography>
+                    <Typography>{labels3.items[7]}</Typography>
+                  </Box>
                 </Grid>
               </>
             ))}
           </Grid>
-          {/* <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
-          >
-            {labels3.map((labels3) => (
-              <Grid item xs={2} sm={4} md>
-                {labels3.items}
-              </Grid>
-            ))}
-          </Grid> */}
         </Box>
 
         {/* **************** */}
