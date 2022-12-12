@@ -1,18 +1,66 @@
-.myOrdersTable *:not(:last-child) {
-    text-align: start;
+// .myOrdersTable *:not(:last-child) {
+//     text-align: start;
+// }
+
+.orderImg {
+    width: 12%;
+    padding-right: 8px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    color: #161D25 !important;
+}
+
+.orderMain::first-line {
+    font-weight: 500 !important;
+    font-size: 14px !important;
+    line-height: 20px !important;
+    color: #1D2939 !important;
 }
 
 .orderMain {
     width: 33%;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #101828 !important;
+}
+
+.orderTitle {
+    font-size: 18px !important;
+    font-weight: 500 !important;
+    line-height: 24px !important;
+    letter-spacing: 0px;
+    padding-bottom: 5px;
+    color: #161D25;
 }
 
 .orderDetails{
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 500;
-    line-height: 20px;
-    letter-spacing: 0px;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+    line-height: 20px !important;
+    letter-spacing: 0px !important;
     text-align: left;
     color: #959EAD;    
     margin-bottom: 8px;
+}
+
+.orderPrice {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    color: #101828 !important;
+    text-align: end !important;
+}
+
+.orderStatus {
+    padding: 2px 8px;
+    width: 63px;
+    height: 22px;
+    background: #ECFDF3;
+    border-radius: 16px;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    line-height: 18px !important;
+    text-align: center;
+    color: #027A48;
 }

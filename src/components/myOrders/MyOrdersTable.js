@@ -15,6 +15,7 @@ import Typography from '@mui/material/Typography';
 
 // assets
 import edit from '../../assets/icons/edit.png'
+import diamond from '../../assets/images/orderDiamond.png'
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
 //   [`&.${tableCellClasses.head}`]: {
@@ -51,8 +52,8 @@ export default function MyOrdersTable() {
       <Table className={styles.myOrdersTable} sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell>Placed on:<br></br>13.3.2022 16:54</StyledTableCell>
-            <StyledTableCell align="right">Total:<br></br>$3,500.00</StyledTableCell>
+            <StyledTableCell className={styles.orderImg}>Placed on:<br></br>13.3.2022 16:54</StyledTableCell>
+            <StyledTableCell className={styles.orderMain}>Total:<br></br>$3,500.00</StyledTableCell>
             <StyledTableCell align="right"></StyledTableCell>
             <StyledTableCell align="right"></StyledTableCell>
           </TableRow>
@@ -60,10 +61,10 @@ export default function MyOrdersTable() {
         <TableBody>
           {rows.map((row) => (
             <StyledTableRow key={row.name}>
-              <StyledTableCell component="th" scope="row">
-                {row.name}
+              <StyledTableCell className={styles.orderImg} component="th" scope="row" align="center">
+                <img src={diamond} />
               </StyledTableCell>
-              <StyledTableCell className={styles.orderMain} >
+              <StyledTableCell>
                 <Typography className={styles.orderTitle}>
                     {row.title}
                 </Typography>
@@ -71,13 +72,17 @@ export default function MyOrdersTable() {
                     {row.details}
                 </Typography>
               </StyledTableCell>
-              <StyledTableCell>
+              <StyledTableCell className={styles.orderPrice}>
                 ${row.price} 
                 <IconButton aria-label="">
                     <img src={edit} />
                 </IconButton>
               </StyledTableCell>
-              <StyledTableCell align="right">{row.status}</StyledTableCell>
+              <StyledTableCell align="right" sx={{textAlign: '-webkit-right'}}>
+                <Typography className={styles.orderStatus}>
+                    {row.status}
+                </Typography>
+            </StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody>
