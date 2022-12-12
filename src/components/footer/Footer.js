@@ -320,6 +320,7 @@ function Footer() {
       >
         {" "}
         <Typography
+          className={styles.copyRight}
           sx={{
             fontWeight: 400,
             color: "#5A7184",
@@ -329,18 +330,17 @@ function Footer() {
             display: "flex",
             alignItems: "center",
             flexGrow: 2,
-            marginLeft: 10,
           }}
         >
           Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
         </Typography>
         <Box
+          className={styles.socIcon}
           sx={{
             display: "flex",
             alignItems: "center",
             flexGrow: 1,
             justifyContent: "space-around",
-            marginRight: 10,
           }}
         >
           <Box>

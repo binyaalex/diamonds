@@ -4,6 +4,7 @@
 
 .footer {
   padding: 0 8vw;
+  width: 100%;
   display: flex;
   justify-content: space-around;
   background: #f9fafb;
@@ -13,9 +14,29 @@
   background: #f4f6f8;
   height: 8vh;
 }
+.copyRight {
+  padding-left: 8%;
+}
+.socicon {
+  padding-right: 8%;
+}
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 500px) {
   .footer {
     flex-direction: column;
+  }
+  .secondDiv {
+    display: flex;
+    flex-direction: column;
+    height: unset;
+  }
+  .copyRight {
+    padding-left: unset;
+    display: flex;
+    justify-content: center;
+  }
+  .socIcon {
+    display: flex;
+    padding: 5%;
   }
 }
