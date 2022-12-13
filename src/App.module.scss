@@ -23,15 +23,6 @@
   margin-bottom: 32px;
 }
 
-.description2 {
-  font-weight: 400 !important;
-  font-size: 16px !important;
-  line-height: 24px !important;
-  color: #667085;
-  padding: 4px 0 20px;
-
-  margin-bottom: 32px;
-}
 //filter
 .filter {
   background: #f9fafb;
@@ -96,12 +87,6 @@
 .secondryTitle {
   font-size: 24px !important;
 }
-<<<<<<< HEAD
-.description2style{
-  display: flex;
-  flex-direction: column;
-}
-=======
 
 .bigTitle {
   font-weight: 600;
@@ -123,4 +108,8 @@
   margin: auto;
   padding: 5% 0;
 }
->>>>>>> f594a321a4414628139a1d0cadfb56fe728e0a86
+
+.mcbook {
+  padding: 5%;
+  position: relative;
+}
