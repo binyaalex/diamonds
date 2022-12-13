@@ -46,42 +46,55 @@ const rows = [
   createData('Frozen yoghurt', '10.02-Carat Radiant Cut Diamond', 'Very Good Cut | E Color | VS2 Clarity', 3500.00, 'shipped'),
 ];
 
-export default function MyOrdersTable() {
+console.log(rows);
+
+export default function MyOrdersTable({order}) {
   return (
     <TableContainer component={Paper}>
       <Table className={styles.myOrdersTable} sx={{ minWidth: 700 }} aria-label="customized table">
         <TableHead>
           <TableRow>
-            <StyledTableCell className={styles.orderImg}>Placed on:<br></br>13.3.2022 16:54</StyledTableCell>
-            <StyledTableCell className={styles.orderMain}>Total:<br></br>$3,500.00</StyledTableCell>
+            <StyledTableCell className={styles.orderImg}>Placed on:<br></br>{order.date}</StyledTableCell>
+            <StyledTableCell className={styles.orderMain}>Total:<br></br>{order.totalPrice}</StyledTableCell>
             <StyledTableCell align="right"></StyledTableCell>
             <StyledTableCell align="right"></StyledTableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {rows.map((row) => (
-            <StyledTableRow key={row.name}>
+          {console.log(order.products)}
+          {order.products.map((product) => (
+            <StyledTableRow key={product.id}>
               <StyledTableCell className={styles.orderImg} component="th" scope="row" align="center">
                 <img src={diamond} />
               </StyledTableCell>
               <StyledTableCell>
                 <Typography className={styles.orderTitle}>
-                    {row.title}
+                    {product.name}
                 </Typography>
                 <Typography className={styles.orderDetails}>
-                    {row.details}
+                  {product?.color || 'D'}  | {product?.clarity || 'FL'} | {product?.cut || 'Very Good'}
                 </Typography>
               </StyledTableCell>
               <StyledTableCell className={styles.orderPrice}>
-                ${row.price} 
+                ${product.price} 
                 <IconButton aria-label="">
                     <img src={edit} />
                 </IconButton>
               </StyledTableCell>
               <StyledTableCell align="right" sx={{textAlign: '-webkit-right'}}>
-                <Typography className={styles.orderStatus}>
-                    {row.status}
-                </Typography>
+                {console.log(product.status)}
+                {product.status === 'authentication' ? 
+                  <Typography className={styles.orderStatus} sx={{color: '#5925DC'}}>
+                    {product.status}
+                  </Typography> 
+                : product.status === 'pending approval' ? 
+                  <Typography className={styles.orderStatus} sx={{color: '#3538CD'}}>
+                    {product.status}
+                  </Typography>
+                : <Typography className={styles.orderStatus}>
+                    {product.status}
+                  </Typography>
+                }
             </StyledTableCell>
             </StyledTableRow>
           ))}
