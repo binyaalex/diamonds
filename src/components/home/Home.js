@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../App.module.scss';
+import styles from './home.module.scss';
 import Filter from './Filter'
 import Landing from './Landing'
 import Results from './Results'

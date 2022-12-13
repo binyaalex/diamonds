@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import styles from '../../App.module.scss';
+import styles from './home.module.scss';
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { ReactComponent as Play } from "../../assets/icons/Play.svg";

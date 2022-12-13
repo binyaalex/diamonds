@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from '../../App.module.scss';
+import styles from './home.module.scss';
+import mainStyles from '../../App.module.scss';
 
 //mui
 import Box from '@mui/material/Box';
@@ -80,7 +81,7 @@ const Filter = () => {
       <Box sx={{
         display: 'flex', justifyContent: 'space-between', pb: "34px"
       }}>
-        <Typography className={styles.mainTitle}>
+        <Typography className={mainStyles.mainTitle}>
           Loose Diamonds Search
         </Typography>
         <IconButton       >

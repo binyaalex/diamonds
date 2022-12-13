@@ -341,6 +341,10 @@ function Header({ isUser, setIsUser }) {
               variant="contained"
               className={styles.muiButton}
               disableElevation
+              sx={{
+                backgroundColor: '#4640DE', boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+              }}
+
             >
               <Phone style={{ width: '15px', marginRight: '10px' }} />
               {"(415) 555-2671"}
@@ -350,7 +354,9 @@ function Header({ isUser, setIsUser }) {
               disableElevation
               className={styles.muiButton}
               onClick={() => setIsUser(true)}
-              sx={{ backgroundColor: '#7F56D9' }}
+              sx={{
+                backgroundColor: '#7F56D9', boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+              }}
 
             >
               Log in
