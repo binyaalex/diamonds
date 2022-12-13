@@ -29,6 +29,7 @@ import { EightK } from "@mui/icons-material";
 
 import avatar from "../../assets/images/avatar.jpg";
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
+import { ReactComponent as Phone } from "../../assets/icons/Phone.svg";
 import { ReactComponent as Orders } from "../../assets/icons/Orders.svg";
 import { ReactComponent as Listings } from "../../assets/icons/Listings.svg";
 import { ReactComponent as Offers } from "../../assets/icons/Offers.svg";
@@ -78,8 +79,8 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(
   })
 );
 
-function Header() {
-  const [value, setValue] = React.useState(0);
+function Header({ isUser, setIsUser }) {
+  const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
@@ -209,123 +210,153 @@ function Header() {
           </AntTabs>
         </Box>
 
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: { xs: "none", md: "flex" },
-            justifyContent: "right",
-          }}
-        >
-          <Badge badgeContent={3} color="error">
-            <IconButton
-              sx={{
-                padding: "12px",
-                width: "42px",
-                height: "40px",
-                border: "1px solid #D0D5DD",
-                boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
-                borderRadius: "8px",
-                ml: 2,
-              }}
-            >
-              <Cart />
-            </IconButton>
-          </Badge>
-
-          <Badge badgeContent={3} color="error">
-            <IconButton
-              sx={{
-                padding: "12px",
-                width: "42px",
-                height: "40px",
-                border: "1px solid #D0D5DD",
-                boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
-                borderRadius: "8px",
-                ml: 2,
-              }}
-            >
-              <Heart />
-            </IconButton>
-          </Badge>
-
-          <IconButton
+        {isUser ? (
+          <Box
             sx={{
-              padding: "12px",
-              width: "42px",
-              height: "40px",
-              ml: 2,
+              flexGrow: 1,
+              display: { xs: "none", md: "flex" },
+              justifyContent: "right",
             }}
           >
-            <Bell />
-          </IconButton>
-
-          <Tooltip title="My Profile">
-            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
-              <Avatar alt="Remy Sharp" src={avatar} />
-            </IconButton>
-          </Tooltip>
-
-          <Menu
-            //     PaperProps={{
-            //   style: {width: "240px", height: "300px" },
-            // }}
-            sx={{
-              mt: "45px",
-              // width: "240px", height: "300px"
-            }}
-            id="menu-appbar"
-            anchorEl={anchorElUser}
-            anchorOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            keepMounted
-            transformOrigin={{
-              vertical: "top",
-              horizontal: "right",
-            }}
-            open={Boolean(anchorElUser)}
-            onClose={handleCloseUserMenu}
-          >
-            <MenuList>
-              <Box
+            <Badge badgeContent={3} color="error">
+              <IconButton
                 sx={{
-                  width: "240px",
-                  display: "flex",
-                  alignItems: "center",
-                  p: "0 16px ",
+                  padding: "12px",
+                  width: "42px",
+                  height: "40px",
+                  border: "1px solid #D0D5DD",
+                  boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+                  borderRadius: "8px",
+                  ml: 2,
                 }}
               >
+                <Cart />
+              </IconButton>
+            </Badge>
+
+            <Badge badgeContent={3} color="error">
+              <IconButton
+                sx={{
+                  padding: "12px",
+                  width: "42px",
+                  height: "40px",
+                  border: "1px solid #D0D5DD",
+                  boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
+                  borderRadius: "8px",
+                  ml: 2,
+                }}
+              >
+                <Heart />
+              </IconButton>
+            </Badge>
+
+            <IconButton
+              sx={{
+                padding: "12px",
+                width: "42px",
+                height: "40px",
+                ml: 2,
+              }}
+            >
+              <Bell />
+            </IconButton>
+
+            <Tooltip title="My Profile">
+              <IconButton onClick={handleOpenUserMenu} sx={{ p: 0, ml: 2 }}>
                 <Avatar alt="Remy Sharp" src={avatar} />
+              </IconButton>
+            </Tooltip>
+
+            <Menu
+              //     PaperProps={{
+              //   style: {width: "240px", height: "300px" },
+              // }}
+              sx={{
+                mt: "45px",
+                // width: "240px", height: "300px"
+              }}
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: "top",
+                horizontal: "right",
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+            >
+              <MenuList>
                 <Box
                   sx={{
-                    p: "12px ",
+                    width: "240px",
+                    display: "flex",
+                    alignItems: "center",
+                    p: "0 16px ",
                   }}
                 >
-                  <Typography>Danna Cohen</Typography>
-                  <Typography
+                  <Avatar alt="Remy Sharp" src={avatar} />
+                  <Box
                     sx={{
-                      color: "  #667085 ",
+                      p: "12px ",
                     }}
                   >
-                    Danna@gmail.com
-                  </Typography>
+                    <Typography>Danna Cohen</Typography>
+                    <Typography
+                      sx={{
+                        color: "  #667085 ",
+                      }}
+                    >
+                      Danna@gmail.com
+                    </Typography>
+                  </Box>
                 </Box>
-              </Box>
-              <Divider />
+                <Divider />
 
-              {profile.map((el) => (
-                <>
-                  <MenuItem key={el.title} onClick={handleCloseUserMenu}>
-                    <ListItemIcon>{el.icon}</ListItemIcon>
-                    <ListItemText fontSize="small">{el.title}</ListItemText>
-                  </MenuItem>
-                  {el.divider ? <Divider /> : null}
-                </>
-              ))}
-            </MenuList>
-          </Menu>
-        </Box>
+                {profile.map((el) => (
+                  <>
+                    <MenuItem key={el.title} onClick={handleCloseUserMenu}>
+                      <ListItemIcon>{el.icon}</ListItemIcon>
+                      <ListItemText fontSize="small">{el.title}</ListItemText>
+                    </MenuItem>
+                    {el.divider ? <Divider /> : null}
+                  </>
+                ))}
+              </MenuList>
+            </Menu>
+          </Box>
+        ) : (
+          <Box
+            sx={{
+              // flexGrow: 1,
+              display: "flex",
+              justifyContent: "space-between",
+              width: '250px'
+            }}
+          >
+            <Button
+              variant="contained"
+              className={styles.muiButton}
+              disableElevation
+            >
+              <Phone style={{ width: '15px', marginRight: '10px' }} />
+              {"(415) 555-2671"}
+            </Button>
+            <Button
+              variant="contained"
+              disableElevation
+              className={styles.muiButton}
+              onClick={() => setIsUser(true)}
+              sx={{ backgroundColor: '#7F56D9' }}
+
+            >
+              Log in
+            </Button>
+          </Box>
+        )}
       </Toolbar>
       {/* </Container> */}
     </AppBar>
