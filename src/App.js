@@ -17,7 +17,7 @@ function App() {
         <Header isUser={isUser} setIsUser={setIsUser} />
         <div className={styles.allPages}>
           <Routes >
-            <Route path="/" element={<Home isUser={isUser} setIsUser={setIsUser} />} />
+            <Route path="/" element={<Home isUser={isUser} />} />
             <Route path="/productdetails" element={<ProductDetails />} />
             <Route path="/myorders" element={<MyOrders />} />
             <Route path="/shoppingcart" element={<ShoppingCart />} />
