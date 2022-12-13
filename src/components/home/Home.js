@@ -4,7 +4,7 @@ import Filter from './Filter'
 import Landing from './Landing'
 import Results from './Results'
 
-const Home = ({ isUser, setIsUser }) => {
+const Home = ({ isUser }) => {
     return (
         <>
             {isUser ? (
@@ -13,7 +13,7 @@ const Home = ({ isUser, setIsUser }) => {
                     <Results />
                 </>
             ) : (
-                <Landing isUser={isUser} setIsUser={setIsUser} />
+                <Landing />
             )}
         </>
     )

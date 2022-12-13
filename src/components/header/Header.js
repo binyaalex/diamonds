@@ -331,10 +331,10 @@ function Header({ isUser, setIsUser }) {
         ) : (
           <Box
             sx={{
-              flexGrow: 1,
+              // flexGrow: 1,
               display: "flex",
               justifyContent: "space-between",
-              width: '180px'
+              width: '250px'
             }}
           >
             <Button
