@@ -1,3 +1,4 @@
+import MainTitle from '../repeat/MainTitle';
 import styles from './MyOrders.module.scss';
 
 import MyOrdersList from './MyOrdersList';
@@ -32,6 +33,10 @@ const ordersArr = [
 const MyOrders = () => {
     return (
         <>
+            <MainTitle 
+                text='My Orders' 
+                description='Lorem ipsum dolor sit amet, consectetur adipiscing elit.' 
+            />
             <MyOrdersList orders={ordersArr} />
         </>
     )
