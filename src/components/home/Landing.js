@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import { ReactComponent as Play } from "../../assets/icons/Play.svg";
 import { ReactComponent as MacBook } from "../../assets/icons/MacBook.svg";
-
+import screen from '../../assets/images/screen.JPG'
 
 const Landing = () => {
     return (
@@ -59,7 +59,26 @@ const Landing = () => {
                     Sign up
                 </Button>
             </Box>
-            <MacBook />
+            <div className={styles.mcbook}>
+                <MacBook
+                    style={{
+                        position: 'relative',
+                        margin: 'auto',
+                        width: '90%',
+                        zIndex: 0
+
+                    }}
+                />
+                <img
+                    src={screen}
+                    style={{
+                        position: 'absolute',
+                        margin: 'auto',
+                        width: 'calc(90% - 30px)',
+                        zIndex: 1
+                    }}
+                />
+            </div>
         </>
     )
 }
