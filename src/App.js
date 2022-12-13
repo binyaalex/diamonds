@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './App.module.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
@@ -9,13 +9,15 @@ import Header from './components/header/Header';
 import Footer from './components/footer/Footer'
 
 function App() {
+  const [isUser, setIsUser] = useState(false)
+
   return (
     <div className="App">
       <BrowserRouter>
-        <Header />
+        <Header isUser={isUser} setIsUser={setIsUser} />
         <div className={styles.allPages}>
           <Routes >
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home isUser={isUser} setIsUser={setIsUser} />} />
             <Route path="/productdetails" element={<ProductDetails />} />
             <Route path="/myorders" element={<MyOrders />} />
             <Route path="/ordersuccess" element={<OrderSuccess />} />
