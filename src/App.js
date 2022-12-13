@@ -20,6 +20,7 @@ function App() {
             <Route path="/" element={<Home isUser={isUser} setIsUser={setIsUser} />} />
             <Route path="/productdetails" element={<ProductDetails />} />
             <Route path="/myorders" element={<MyOrders />} />
+            <Route path="/shoppingcart" element={<ShoppingCart />} />
             <Route path="/ordersuccess" element={<OrderSuccess />} />
           </Routes>
         </div>
