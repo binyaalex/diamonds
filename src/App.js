@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/home/Home';
 import ProductDetails from './components/productDetails/ProductDetails';
 import MyOrders from './components/myOrders/MyOrders';
+import OrderSuccess from './components/orderSuccess/OrderSuccess';
 import Header from './components/header/Header';
 import Footer from './components/footer/Footer'
 
@@ -17,6 +18,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/productdetails" element={<ProductDetails />} />
             <Route path="/myorders" element={<MyOrders />} />
+            <Route path="/ordersuccess" element={<OrderSuccess />} />
           </Routes>
         </div>
         <Footer />
