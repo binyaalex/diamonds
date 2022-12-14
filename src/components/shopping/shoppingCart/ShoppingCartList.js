@@ -31,41 +31,38 @@ export default function ShoppingCartList({ orders }) {
       <Box className={styles.checkout}>
         <Box className={styles.voucher}>
           <Box>
-            <Typography>Have a voucher?</Typography>
+            <Typography className={styles.CheckoutTitle}>
+              Have a voucher?
+            </Typography>
           </Box>
           <Box
             component="form"
             sx={{
-              "& > :not(style)": { m: 1, width: "25ch" },
+              display: "flex",
             }}
             noValidate
             autoComplete="off"
           >
-            <TextField
-              id="outlined-basic"
-              label="Voucher code"
-              variant="outlined"
-              sx={{
-                backgroundColor: "#F9FAFB",
-              }}
-            />
+            <input className={styles.Vinput} placeholder="Voucher code" />
             <button className={styles.applybtn}>Apply</button>
           </Box>
         </Box>
         <Box className={styles.summary}>
           <Box>
-            <Typography>Order Summary</Typography>
+            <Typography className={styles.CheckoutTitle}>
+              Order Summary
+            </Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography>Price</Typography>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography className={styles.text}>Price</Typography>
             <Typography>$1725.00</Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography>Discount 10%</Typography>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography className={styles.text}>Discount 10%</Typography>
             <Typography>-$125</Typography>
           </Box>
-          <Box sx={{ display: "flex" }}>
-            <Typography>Total Price</Typography>
+          <Box sx={{ display: "flex", justifyContent: "space-between" }}>
+            <Typography className={styles.text}>Total Price</Typography>
             <Typography>$1600.00</Typography>
           </Box>
           <Box>
