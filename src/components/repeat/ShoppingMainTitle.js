@@ -13,6 +13,7 @@ const MainTitle = ({text, description}) => {
                 sx={{
                     display: "flex",
                     justifyContent: "space-between",
+                    alignItems: 'center',
                     m: 'auto'
                 }}
             >
@@ -21,7 +22,7 @@ const MainTitle = ({text, description}) => {
                         {text}
                     </Typography>
                     {description?
-                        <Typography className={styles.description}>
+                        <Typography className={styles.shoppingTitleDescription}>
                             {description}
                         </Typography> 
                     : ""}
