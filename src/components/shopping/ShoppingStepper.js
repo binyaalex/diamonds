@@ -9,8 +9,8 @@ import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
-import SafetyCheckIcon from '@mui/icons-material/SafetyCheck';
-import IndeterminateCheckBoxIcon from '@mui/icons-material/IndeterminateCheckBox';
+import { BsCheckSquareFill } from 'react-icons/bs';
+
 import LensIcon from '@mui/icons-material/Lens';
 
 import Steps from './Steps';
@@ -94,6 +94,7 @@ export default function ShoppingStepper() {
     justifyContent: 'center',
     alignItems: 'center',
     ...(ownerState.active && {
+      color: '#454F5B'
     }),
     ...(ownerState.completed && {
     color: '#5C6AC4',
@@ -104,7 +105,7 @@ export default function ShoppingStepper() {
   const StepIcon = ({ label }) => (
     <div style={{ position: 'relative' }}>
       <LensIcon />
-      <div style={{ color: 'white', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', textAlign: 'center', lineHeight: '24px' }}>{label}</div>
+      <div style={{ color: 'white', position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', textAlign: 'center', lineHeight: '24px', fontSize: '12px' }}>{label}</div>
     </div>
   );
 
@@ -115,7 +116,7 @@ export default function ShoppingStepper() {
     console.log(completed);
     let icon = <StepIcon label={props.icon} />
     if (completed) {
-      icon =  <CheckBoxIcon />
+      icon =  <BsCheckSquareFill />
     }
     const icons = {
       1: icon,
@@ -175,7 +176,24 @@ export default function ShoppingStepper() {
               stepProps.completed = false;
             }
             return (
-              <Step key={label} {...stepProps}>
+              <Step 
+                key={label} 
+                {...stepProps}
+                sx={{
+                  '& .MuiStepLabel-label':
+                    {
+                      color: '#959EAD', // Just text label (not active)
+                    },
+                  '& .MuiStepLabel-label.Mui-completed':
+                    {
+                      color: '#5C6AC4', // Just text label (COMPLETED)
+                    },
+                  '& .MuiStepLabel-label.Mui-active':
+                    {
+                      color: '#161D25', // Just text label (ACTIVE)
+                    },
+                }}
+              >
                 <StepLabel StepIconComponent={ColorlibStepIcon}>{label}</StepLabel>
               </Step>
             );
