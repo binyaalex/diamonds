@@ -8,6 +8,7 @@ import OrderSuccess from "./components/orderSuccess/OrderSuccess";
 import MyOrders from "./components/myOrders/MyOrders";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
+import Signup from "./components/signup/Signup";
 
 function App() {
   const [isUser, setIsUser] = useState(false);
@@ -23,6 +24,7 @@ function App() {
             <Route path="/shopping" element={<Shopping />} />
             <Route path="/ordersuccess" element={<OrderSuccess />} />
             <Route path="/myorders" element={<MyOrders />} />
+            <Route path="/signup" element={<Signup />} />
           </Routes>
         </div>
         <Footer />

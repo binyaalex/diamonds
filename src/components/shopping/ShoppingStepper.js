@@ -8,7 +8,7 @@ import Typography from '@mui/material/Typography';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import PropTypes from 'prop-types';
 import { styled } from '@mui/material/styles';
-import CheckBoxIcon from '@mui/icons-material/CheckBox';
+import EastIcon from '@mui/icons-material/East';
 import { BsCheckSquareFill } from 'react-icons/bs';
 
 import LensIcon from '@mui/icons-material/Lens';
@@ -163,7 +163,10 @@ export default function ShoppingStepper() {
       : ""
       }
       <Box sx={{ width: '100%' }}>
-        <Stepper activeStep={activeStep} connector={<QontoConnector />} >
+        <Stepper 
+          activeStep={activeStep} 
+          connector={<EastIcon style={{width: '12px', margin: '0 25px 0 35px', color: '#919EAB'}} />} 
+        >
           {steps.map((label, index) => {
             const stepProps = {};
             const labelProps = {};
