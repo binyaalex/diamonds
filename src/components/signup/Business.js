@@ -15,7 +15,7 @@ const inputs = [
   { label: 'Email*', placeholder: 'Enter your email' },
   { label: 'Password*', placeholder: 'Create a password', helper: 'Must be at least 8 characters' },
 ]
-const Signup = () => {
+const Business = () => {
   const navigate = useNavigate();
 
   return (
@@ -30,8 +30,10 @@ const Signup = () => {
           height: '100vh'
         }}>
         <Grid item xs={6}
-          sx={{ background: 'white', height: '100%' }}
-        >
+          sx={{
+            background: '#F2F4F7', overflow: 'hidden',
+            height: '100%'
+          }}>
           <Box
             sx={{
               display: "flex",
@@ -50,6 +52,11 @@ const Signup = () => {
               Diamonds
             </h5>
           </Box>
+        </Grid>
+        <Grid item xs={6}
+          sx={{ background: 'white', height: '100%' }}
+        >
+
 
           <FormGroup
             sx={{
@@ -110,7 +117,7 @@ const Signup = () => {
                 </div>} />
             <Button
               variant="contained"
-              onClick={() => navigate('/business')}
+              onClick={() => navigate('#')}
               sx={{
                 backgroundColor: '#7F56D9',
                 height: '44px',
@@ -132,9 +139,8 @@ const Signup = () => {
                 height: '44px',
                 textTransform: 'none',
               }}
-              startIcon={<FcGoogle />}
             >
-              Sign up with Google
+              <FcGoogle style={{ marginRight: '5px', width: '25px', height: '25px' }} />Sign up with Google
             </Button>
             <div
               style={{
@@ -175,25 +181,10 @@ const Signup = () => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={6}
-          sx={{
-            background: '#F2F4F7', overflow: 'hidden',
-            height: '100%'
-          }}>
-          <img
-            src={screen}
-            style={{
-              height: '60%',
-              overflow: 'hidden',
-              margin: "20% 10%",
-              borderRadius: '8px',
-              boxShadow: '0px 64px 64px 64px rgba(15, 15, 15, 0.08), 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
-            }}
-          />
-        </Grid>
+
       </Grid>
     </>
   )
 }
 
-export default Signup
+export default Business
