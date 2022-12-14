@@ -1,8 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import CardList from "../cardList/CardList";
+import CardList from "../../cardList/CardList";
 import CardsHeader from "./cardsHeader/CardsHeader";
 
-import ShoppingMainTitle from "../repeat/ShoppingMainTitle";
 import ShoppingCartList from "./ShoppingCartList";
 
 const ordersArr = [
@@ -180,10 +179,6 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <ShoppingMainTitle
-        text="Shopping Cart"
-        description="This is your cart based on your item you want to buy."
-      />
       <ShoppingCartList orders={ordersArr} />
       <CardsHeader componentWidth={componentWidth} />
       <CardList products={productsArr} getCardWidth={getCardWidth} />

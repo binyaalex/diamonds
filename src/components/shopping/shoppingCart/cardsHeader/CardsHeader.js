@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./CardsHeader.module.scss";
 import RegularButton from "../RegularButton";
-import SecondryTitle from "../../repeat/SecondryTitle";
+import SecondryTitle from "../../../repeat/SecondryTitle";
 
 const CardsHeader = ({ componentWidth }) => {
   return (

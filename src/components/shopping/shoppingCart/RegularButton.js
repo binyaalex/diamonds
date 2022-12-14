@@ -1,5 +1,5 @@
 import Button from '@mui/material/Button';
-import styles from '../../App.module.scss';
+import styles from '../../../App.module.scss';
 
 const RegularButton = ({text, light}) => {
     let style
