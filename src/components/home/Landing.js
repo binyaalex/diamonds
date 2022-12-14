@@ -5,8 +5,11 @@ import Box from "@mui/material/Box";
 import { ReactComponent as Play } from "../../assets/icons/Play.svg";
 import { ReactComponent as MacBook } from "../../assets/icons/MacBook.svg";
 import screen from '../../assets/images/screen.JPG'
+import { useNavigate } from "react-router-dom";
 
 const Landing = () => {
+    const navigate = useNavigate();
+
     return (
         <>
             <h1 className={styles.bigTitle}>
@@ -44,7 +47,7 @@ const Landing = () => {
                     variant="contained"
                     disableElevation
                     className={styles.muiButton}
-                    // onClick={() => setIsUser(true)}
+                    onClick={() => navigate('/signup')}
                     sx={{
                         backgroundColor: '#7F56D9',
                         boxShadow: "0px 1px 2px rgba(16, 24, 40, 0.05)",
