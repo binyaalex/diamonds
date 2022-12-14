@@ -3,65 +3,84 @@
 // }
 
 .orderImg {
-    width: 12%;
-    padding-right: 8px !important;
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    color: #161D25 !important;
+  width: 12%;
+  padding-right: 8px !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: #161d25 !important;
 }
 
 .orderMain::first-line {
-    font-weight: 500 !important;
-    font-size: 14px !important;
-    line-height: 20px !important;
-    color: #1D2939 !important;
+  font-weight: 500 !important;
+  font-size: 14px !important;
+  line-height: 20px !important;
+  color: #1d2939 !important;
 }
 
 .orderMain {
-    width: 33%;
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    line-height: 22px !important;
-    color: #101828 !important;
+  width: 33%;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  color: #101828 !important;
 }
 
 .orderTitle {
-    font-size: 18px !important;
-    font-weight: 500 !important;
-    line-height: 24px !important;
-    letter-spacing: 0px;
-    padding-bottom: 5px;
-    color: #161D25;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 24px !important;
+  letter-spacing: 0px;
+  padding-bottom: 5px;
+  color: #161d25;
 }
 
-.orderDetails{
-    font-size: 14px !important;
-    font-weight: 500 !important;
-    line-height: 20px !important;
-    letter-spacing: 0px !important;
-    text-align: left;
-    color: #959EAD;    
-    margin-bottom: 8px;
+.orderDetails {
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  line-height: 20px !important;
+  letter-spacing: 0px !important;
+  text-align: left;
+  color: #959ead;
+  margin-bottom: 8px;
 }
 
 .orderPrice {
-    font-weight: 600 !important;
-    font-size: 16px !important;
-    line-height: 22px !important;
-    color: #101828 !important;
-    text-align: end !important;
-    width: 23%;
+  font-weight: 600 !important;
+  font-size: 16px !important;
+  line-height: 22px !important;
+  color: #101828 !important;
+  text-align: end !important;
+  width: 23%;
 }
 
 .orderStatus {
-    padding: 2px 8px;
-    width: fit-content;
-    height: 22px;
-    background: #ECFDF3;
-    border-radius: 16px;
-    font-weight: 500 !important;
-    font-size: 12px !important;
-    line-height: 18px !important;
-    text-align: center;
-    color: #027A48;
+  padding: 2px 8px;
+  width: fit-content;
+  height: 22px;
+  background: #ecfdf3;
+  border-radius: 16px;
+  font-weight: 500 !important;
+  font-size: 12px !important;
+  line-height: 18px !important;
+  text-align: center;
+  color: #027a48;
+}
+
+.applybtn {
+  background: #454f5b;
+  mix-blend-mode: normal;
+  border-radius: 8px;
+  color: #ffff;
+  width: 60px !important;
+  height: 44px;
+}
+
+.checkoutbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4640de;
+  border-radius: 4px;
+  border: none;
+  color: #ffff;
 }
