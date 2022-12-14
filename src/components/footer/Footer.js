@@ -100,177 +100,178 @@ const labels3 = [
 
 function Footer() {
   return (
-    <>
-      <Box className={styles.footer}>
-        <Box
-          sx={{
-            display: "flex",
-            paddingTop: 5,
-          }}
-        >
+    <Box className={styles.mainWrapper}>
+      <Box className={styles.footerWrapper}>
+        <Box className={styles.footer}>
           <Box
             sx={{
-              background:
-                "linear-gradient(180deg, #FFFFFF 0%, #D0D5DD 100%), #FFFFFF",
-              border: "0.2px solid #D0D5DD",
-              borderRadius: "8px",
-              width: "32px",
-              height: "32px",
               display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              mr: 1,
-              marginBottom: 3,
+              paddingTop: 5,
             }}
           >
-            <Diamond />
+            <Box
+              sx={{
+                background:
+                  "linear-gradient(180deg, #FFFFFF 0%, #D0D5DD 100%), #FFFFFF",
+                border: "0.2px solid #D0D5DD",
+                borderRadius: "8px",
+                width: "32px",
+                height: "32px",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                mr: 1,
+                marginBottom: 3,
+              }}
+            >
+              <Diamond />
+            </Box>
+            <Typography
+              variant="h6"
+              noWrap
+              component="a"
+              href="/"
+              sx={{
+                mr: 2,
+                display: { md: "flex" },
+                fontWeight: 600,
+                color: "#101828",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+              }}
+            >
+              Diamonds
+            </Typography>
           </Box>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            href="/"
-            sx={{
-              mr: 2,
-              display: { md: "flex" },
-              fontWeight: 600,
-              color: "#101828",
-              textDecoration: "none",
-              fontFamily: ["Inter"],
-            }}
-          >
-            Diamonds
-          </Typography>
-        </Box>
 
-        <Box sx={{ flexGrow: 1, paddingTop: 5 }}>
-          <Grid
-            container
-            spacing={{ xs: 2, md: 3 }}
-            columns={{ xs: 4, sm: 8, md: 12 }}
-          >
-            {labels3.map((labels3) => (
-              <>
-                {/* <Grid item xs={2} sm={4} md>
+          <Box sx={{ flexGrow: 1, paddingTop: 5 }}>
+            <Grid
+              container
+              spacing={{ xs: 2, md: 3 }}
+              columns={{ xs: 4, sm: 8, md: 12 }}
+            >
+              {labels3.map((labels3) => (
+                <>
+                  {/* <Grid item xs={2} sm={4} md>
                   {labels3.header}
                   <Grid>{labels3.items}</Grid>
                 </Grid>
                  */}
-                <Grid item xs={2} sm={4} md>
-                  <Box
-                    sx={{
-                      display: "grid",
-                      gridAutoFlow: "row",
-                      gridTemplateColumns: "repeat(1, 1fr)",
-                      gridTemplateRows: "repeat(2)",
-                      gap: 1,
-                      marginBottom: 1.5,
-                      fontWeight: 400,
-                      color: "#161D25",
-                      fontFamily: ["Inter"],
-                      fontSize: 16,
-                    }}
-                  >
-                    {labels3.header}
+                  <Grid item xs={2} sm={4} md>
+                    <Box
+                      sx={{
+                        display: "grid",
+                        gridAutoFlow: "row",
+                        gridTemplateColumns: "repeat(1, 1fr)",
+                        gridTemplateRows: "repeat(2)",
+                        gap: 1,
+                        marginBottom: 1.5,
+                        fontWeight: 400,
+                        color: "#161D25",
+                        fontFamily: ["Inter"],
+                        fontSize: 16,
+                      }}
+                    >
+                      {labels3.header}
 
-                    {/* <Grid>{labels3.items}</Grid> */}
-                  </Box>
-                  <Box
-                    sx={{
-                      display: "grid",
-                      gridTemplateRows: "repeat(8, 1fr)",
-                      gap: 1,
-                    }}
-                  >
-                    <Typography
+                      {/* <Grid>{labels3.items}</Grid> */}
+                    </Box>
+                    <Box
                       sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
+                        display: "grid",
+                        gridTemplateRows: "repeat(8, 1fr)",
+                        gap: 1,
                       }}
                     >
-                      {labels3.items[0]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[1]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[2]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[3]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[4]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[5]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[6]}
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontWeight: 400,
-                        color: "#161D25",
-                        fontFamily: ["Inter"],
-                        fontSize: 14,
-                      }}
-                    >
-                      {labels3.items[7]}
-                    </Typography>
-                  </Box>
-                </Grid>
-              </>
-            ))}
-          </Grid>
-        </Box>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[0]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[1]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[2]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[3]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[4]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[5]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[6]}
+                      </Typography>
+                      <Typography
+                        sx={{
+                          fontWeight: 400,
+                          color: "#161D25",
+                          fontFamily: ["Inter"],
+                          fontSize: 14,
+                        }}
+                      >
+                        {labels3.items[7]}
+                      </Typography>
+                    </Box>
+                  </Grid>
+                </>
+              ))}
+            </Grid>
+          </Box>
 
-        {/* **************** */}
-        {/* <Box
+          {/* **************** */}
+          {/* <Box
           sx={{
             display: "grid",
             columnGap: 10,
@@ -308,59 +309,61 @@ function Footer() {
             </Typography>
           ))}
         </Box> */}
-        {/* **************** */}
-      </Box>
-
-      <Box
-        className={styles.secondDiv}
-        sx={{
-          display: "flex",
-          justifyContent: "space-around",
-        }}
-      >
-        {" "}
-        <Typography
-          className={styles.copyRight}
-          sx={{
-            fontWeight: 400,
-            color: "#5A7184",
-            textDecoration: "none",
-            fontFamily: ["Inter"],
-            fontSize: 14,
-            display: "flex",
-            alignItems: "center",
-            flexGrow: 2,
-          }}
-        >
-          Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
-        </Typography>
-        <Box
-          className={styles.socIcon}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            flexGrow: 1,
-            justifyContent: "space-around",
-          }}
-        >
-          <Box>
-            <img src={Facebook} />
-          </Box>
-          <Box>
-            <img src={Twitter} />
-          </Box>
-          <Box>
-            <img src={Linkedin} />
-          </Box>
-          <Box>
-            <img src={Instagram} />
-          </Box>
-          <Box>
-            <img src={Github} />
+          {/* **************** */}
+        </Box>
+        <Box className={styles.SecondWrapper}>
+          <Box
+            className={styles.secondDiv}
+            sx={{
+              display: "flex",
+              justifyContent: "space-around",
+            }}
+          >
+            {" "}
+            <Typography
+              className={styles.copyRight}
+              sx={{
+                fontWeight: 400,
+                color: "#5A7184",
+                textDecoration: "none",
+                fontFamily: ["Inter"],
+                fontSize: 14,
+                display: "flex",
+                alignItems: "center",
+                flexGrow: 2,
+              }}
+            >
+              Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
+            </Typography>
+            <Box
+              className={styles.socIcon}
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flexGrow: 1,
+                justifyContent: "space-around",
+              }}
+            >
+              <Box>
+                <img src={Facebook} />
+              </Box>
+              <Box>
+                <img src={Twitter} />
+              </Box>
+              <Box>
+                <img src={Linkedin} />
+              </Box>
+              <Box>
+                <img src={Instagram} />
+              </Box>
+              <Box>
+                <img src={Github} />
+              </Box>
+            </Box>
           </Box>
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 
