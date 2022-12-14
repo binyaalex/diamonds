@@ -3,11 +3,13 @@ import styles from "./App.module.scss";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import ProductDetails from "./components/productDetails/ProductDetails";
-import MyOrders from "./components/myOrders/MyOrders";
+import ShoppingCart from "./components/shoppingCart/ShoppingCart";
+import Payment from "./components/payment/Payment";
 import OrderSuccess from "./components/orderSuccess/OrderSuccess";
+import MyOrders from "./components/myOrders/MyOrders";
 import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
-import ShoppingCart from "./components/shoppingCart/ShoppingCart";
+
 function App() {
   const [isUser, setIsUser] = useState(false);
 
@@ -19,9 +21,10 @@ function App() {
           <Routes>
             <Route path="/" element={<Home isUser={isUser} />} />
             <Route path="/productdetails" element={<ProductDetails />} />
-            <Route path="/myorders" element={<MyOrders />} />
             <Route path="/shoppingcart" element={<ShoppingCart />} />
+            <Route path="/payment" element={<Payment />} />
             <Route path="/ordersuccess" element={<OrderSuccess />} />
+            <Route path="/myorders" element={<MyOrders />} />
           </Routes>
         </div>
         <Footer />
