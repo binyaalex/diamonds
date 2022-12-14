@@ -22,12 +22,12 @@ const Signup = () => {
     <>
       <Grid container
         sx={{
-          position: "absolute",
+          position: "fixed",
           zIndex: 1111,
           top: 0,
           left: 0,
-          // width: '100%',
-          // height: '100%'
+          width: '100vw',
+          height: '100vh'
         }}>
         <Grid item xs={6}
           sx={{ background: 'white', height: '100%' }}
@@ -95,12 +95,19 @@ const Signup = () => {
               </div>
             ))}
 
-            <FormControlLabel control={<Checkbox />} label={<div style={{
-              fontSize: '14px',
-              color: '#667085'
-            }}>i agree to the
-              <Button sx={{ color: "#7F56D9", textTransform: 'none' }}>Terms and Conditions</Button>
-            </div>} />
+            <FormControlLabel
+              control={
+                <Checkbox sx={{
+                  '&.Mui-checked': {
+                    color: '#7F56D9'
+                  }
+                }}
+                />} label={<div style={{
+                  fontSize: '14px',
+                  color: '#667085'
+                }}>i agree to the
+                  <Button sx={{ color: "#7F56D9", textTransform: 'none' }}>Terms and Conditions</Button>
+                </div>} />
             <Button
               variant="contained"
               onClick={() => navigate('#')}
@@ -108,7 +115,10 @@ const Signup = () => {
                 backgroundColor: '#7F56D9',
                 height: '44px',
                 textTransform: 'none',
-                mb: 2
+                mb: 2,
+                '&:hover': {
+                  backgroundColor: "#160FC6"
+                }
               }}
             >
               Get started
@@ -132,7 +142,8 @@ const Signup = () => {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                margin: '5%'
+                margin: '5%',
+
               }}>
               Already have an account?              <Button sx={{ color: "#7F56D9", textTransform: 'none' }}>Log in</Button>
             </div>
@@ -165,14 +176,15 @@ const Signup = () => {
         </Grid>
         <Grid item xs={6}
           sx={{
-            background: '#F2F4F7', overflow: 'hidden'
+            background: '#F2F4F7', overflow: 'hidden',
+            height: '100%'
           }}>
           <img
             src={screen}
             style={{
               height: '60%',
               overflow: 'hidden',
-              margin: "20%",
+              margin: "20% 10%",
               borderRadius: '8px',
               boxShadow: '0px 64px 64px 64px rgba(15, 15, 15, 0.08), 0px 1px 3px rgba(16, 24, 40, 0.1), 0px 1px 2px rgba(16, 24, 40, 0.06)'
             }}
