@@ -2,7 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import CardList from "../cardList/CardList";
 import CardsHeader from "./cardsHeader/CardsHeader";
 
-import MainTitle from "../repeat/MainTitle";
+import ShoppingMainTitle from "../repeat/ShoppingMainTitle";
 import ShoppingCartList from "./ShoppingCartList";
 
 const ordersArr = [
@@ -180,7 +180,7 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <MainTitle
+      <ShoppingMainTitle
         text="Shopping Cart"
         description="This is your cart based on your item you want to buy."
       />
