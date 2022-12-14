@@ -59,24 +59,11 @@ const Landing = () => {
                     Sign up
                 </Button>
             </Box>
-            <div className={styles.mcbook}>
-                <MacBook
-                    style={{
-                        position: 'relative',
-                        margin: 'auto',
-                        width: '90%',
-                        zIndex: 0
-
-                    }}
-                />
+            <div className={styles.mcbook}            >
+                <MacBook className={styles.imgBottom} />
                 <img
                     src={screen}
-                    style={{
-                        position: 'absolute',
-                        margin: 'auto',
-                        width: 'calc(90% - 30px)',
-                        zIndex: 1
-                    }}
+                    className={styles.imgTop}
                 />
             </div>
         </>
