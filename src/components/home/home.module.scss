@@ -77,5 +77,23 @@
 .mcbook {
   padding: 5%;
   position: relative;
+  display: flex;
 
+  .imgBottom {
+    position: relative;
+    margin: auto;
+    width: 90%;
+    z-index: 0;
+  }
+
+  .imgTop {
+    position: absolute;
+    margin: auto;
+    width: calc(90% - 250px);
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    border-radius: 8px 8px 0px 0px
+  }
 }
