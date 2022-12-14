@@ -13,9 +13,12 @@ import Paper from "@mui/material/Paper";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
 
+
 // assets
 import edit from "../../../assets/icons/edit.png";
 import diamond from "../../../assets/images/orderDiamond.png";
+import BinRed from "../../../assets/images/BinRed.png";
+import Bin from "../../../assets/images/Bin.png";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   //   [`&.${tableCellClasses.head}`]: {
@@ -113,8 +116,11 @@ export default function ShoppingCartTable({ order }) {
                 align="right"
                 sx={{ textAlign: "-webkit-right" }}
               >
+                <IconButton aria-label="">
+                  <img src={Bin} />
+                </IconButton>
                 {console.log(product.status)}
-                {product.status === "authentication" ? (
+                {/* {product.status === "authentication" ? (
                   <Typography
                     className={styles.orderStatus}
                     sx={{ color: "#5925DC" }}
@@ -132,7 +138,7 @@ export default function ShoppingCartTable({ order }) {
                   <Typography className={styles.orderStatus}>
                     {product.status}
                   </Typography>
-                )}
+                )} */}
               </StyledTableCell>
             </StyledTableRow>
           ))}
