@@ -9,14 +9,14 @@ import Typography from '@mui/material/Typography';
 import Steps from './Steps';
 import ShoppingMainTitle from './ShoppingMainTitle'
 
-const steps = ['Select campaign settings', 'Create an ad group', 'Create an ad'];
+const steps = ['Cart', 'Shipping & payment', 'Review'];
 
 export default function ShoppingStepper() {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
   const isStepOptional = (step) => {
-    return step === 1;
+    return step === "";
   };
 
   const isStepSkipped = (step) => {
