@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
@@ -164,7 +165,8 @@ export default function ShoppingStepper() {
       }
       <Box sx={{ width: '100%' }}>
         <Stepper 
-          activeStep={activeStep} 
+          activeStep={activeStep}
+          sx={{ background: 'white', padding: '18px', borderRadius: '8px', m: '70px 0 36px' }}
           connector={<EastIcon style={{width: '12px', margin: '0 25px 0 35px', color: '#919EAB'}} />} 
         >
           {steps.map((label, index) => {

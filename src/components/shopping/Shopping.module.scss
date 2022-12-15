@@ -1,10 +1,37 @@
 .shoppingBackground::before {
     background: #F9FAFB;
     width: 100vw;
-    height: 350px;
+    height: 445px;
     position: absolute;
     z-index: -1;
     top: 0;
     left: 0;
     content: "";
+}
+
+//shopping main title
+.mainTitle {
+    font-weight: 500 !important;
+    font-size: 30px !important;
+    line-height: 38px !important;
+    color: #101828;
+}
+
+.shoppingTitleDescription {
+    font-weight: 400 !important;
+    font-size: 16px !important;
+    line-height: 24px !important;
+    color: #667085;
+    padding: 14px 0 0;
+}
+
+.backButton {
+    font-family: 'Inter' !important;
+    font-style: normal;
+    font-weight: 500 !important;
+    font-size: 16px !important;
+    line-height: 22px !important;
+    text-transform: capitalize !important;
+    border-radius: 8px !important;
+    height: 46px;
 }

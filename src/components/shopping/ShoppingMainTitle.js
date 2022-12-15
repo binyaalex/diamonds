@@ -1,4 +1,4 @@
-import styles from '../../App.module.scss';
+import styles from "./Shopping.module.scss";
 
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
@@ -14,7 +14,7 @@ const MainTitle = ({text, description}) => {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: 'center',
-                    m: 'auto'
+                    m: 'auto auto 70px'
                 }}
             >
                 <Box>
