@@ -1,5 +1,6 @@
-import Payment from "./payment/Payment";
 import ShoppingCart from "./shoppingCart/ShoppingCart";
+import Payment from "./payment/Payment";
+import Review from "./review/Review";
 
 const Steps = ({activeStep, handleNext}) => {
 
@@ -21,7 +22,7 @@ const Steps = ({activeStep, handleNext}) => {
     case 2:
       return (
         <>
-          step {activeStep + 1}
+          <Review />
         </>
       );
       break;

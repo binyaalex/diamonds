@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from "react-router-dom";
 
 import Box from '@mui/material/Box';
 import Stepper from '@mui/material/Stepper';
@@ -23,6 +24,8 @@ export default function ShoppingStepper({setIsUser}) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
+  const navigate = useNavigate();
+
   const isStepOptional = (step) => {
     return step === "";
   };
@@ -31,7 +34,7 @@ export default function ShoppingStepper({setIsUser}) {
     return skipped.has(step);
   };
 
-  const handleNext = () => {
+  const handleNext = (e) => {
     let newSkipped = skipped;
     if (isStepSkipped(activeStep)) {
       newSkipped = new Set(newSkipped.values());
@@ -39,8 +42,11 @@ export default function ShoppingStepper({setIsUser}) {
     }
 
     setActiveStep((prevActiveStep) => prevActiveStep + 1);
-    // setActiveStep((prevActiveStep) => prevActiveStep + 1);
     setSkipped(newSkipped);
+    if (e.target.textContent === 'Finish') {
+      navigate('/ordersuccess')
+    }
+    // e.target.textContent === 'Finish' ? navigate('/ordersuccess') : ""
   };
 
   const handleBack = () => {
