@@ -23,8 +23,15 @@
 .copyRight {
   padding-left: 8%;
 }
-.socicon {
-  padding-right: 8%;
+.socIcon {
+  padding-right: 10%;
+}
+.footerWrapper {
+  padding: 0 8vw;
+}
+
+.footerRight {
+  padding-left: 215px;
 }
 
 @media screen and (max-width: 500px) {
@@ -46,8 +53,7 @@
     display: flex;
     padding: 5%;
   }
-}
-
-.footerWrapper {
-  padding: 0 8vw;
+  .footerRight {
+    padding-left: unset;
+  }
 }
