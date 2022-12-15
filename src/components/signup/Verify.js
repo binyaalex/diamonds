@@ -25,7 +25,7 @@ const inputs = [
   { label: 'Contact phone number', placeholder: 'Start typing your phone number' }
 ]
 
-const Business = () => {
+const Verify = () => {
   const [type, setType] = useState('')
   const navigate = useNavigate();
 
@@ -216,4 +216,4 @@ const Business = () => {
   )
 }
 
-export default Business
+export default Verify
