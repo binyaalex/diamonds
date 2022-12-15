@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import styles from './signup.module.scss';
 import { useNavigate } from "react-router-dom";
 
-import screen from '../../assets/images/screen.JPG'
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
 import { ReactComponent as Tick } from "../../assets/icons/Tick.svg";
 import { ReactComponent as Dot } from "../../assets/icons/Dot.svg";
@@ -10,20 +9,23 @@ import { ReactComponent as Dot_gray } from "../../assets/icons/Dot_gray.svg";
 import mail from "../../assets/icons/mail.png"
 import { FcGoogle } from 'react-icons/fc';
 
-import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox } from '@mui/material/';
-// import { display, margin } from '@mui/system';
+import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox, Select, MenuItem } from '@mui/material/';
 const progress = [
   { icon: <Tick />, line: 'Your details' },
   { icon: <Dot />, line: 'Business details', marked: true },
   { icon: <Dot_gray />, line: 'Identify verification' },
 ]
 const inputs = [
-  { label: 'Full Name*', placeholder: 'Enter your name' },
-  { label: 'Email*', placeholder: 'Enter your email' },
-  { label: 'Password*', placeholder: 'Create a password', helper: 'Must be at least 8 characters' },
+  { label: 'Company Name*', placeholder: 'Enter your company name' },
+  { label: 'Doing business as (DBA)', placeholder: 'Enter your DBA here' },
+  { label: 'Business type*', placeholder: 'Select your business type', items: ['Jewelry Store', 'Pawn Shop', 'Other'] },
+  { label: 'Business address', placeholder: 'Start typing address...' },
+  { label: 'Shipping address', placeholder: 'start typing address...', helper: 'We only deliver to commercial address' },
+  { label: 'Contact phone number', placeholder: 'Start typing your phone number' }
 ]
 
 const Business = () => {
+  const [type, setType] = useState('')
   const navigate = useNavigate();
 
   return (
@@ -62,11 +64,9 @@ const Business = () => {
           </Box>
           <div
             style={{
-
               padding: '36px 48px'
             }}>
             {progress.map((step) => (
-
               <div
                 style={{
                   display: 'flex',
@@ -90,15 +90,12 @@ const Business = () => {
         <Grid item xs={6}
           sx={{ background: 'white', height: '100%' }}
         >
-
-
           <FormGroup
             sx={{
               width: "50%",
               margin: 'auto'
             }}>
             <div
-            // style={{ marginBottom: '10%' }}
             >
               <h1
                 style={{
@@ -106,14 +103,13 @@ const Business = () => {
                   color: "#101828",
                 }}
               >
-                Sign up
-              </h1>
+                Business details              </h1>
               <h4
                 style={{
                   color: "#667085",
                 }}
               >
-                It's free, forever
+                Tell us more about your business
               </h4>
             </div>
             {inputs.map((input) => (
@@ -125,9 +121,32 @@ const Business = () => {
                     color: '#344054'
                   }}
                 >{input.label}</FormLabel>
-                <TextField fullWidth placeholder={input.placeholder}
-                  size='small'
-                />
+                {input.items ?
+                  <Select
+                    value={type}
+                    onChange={(e) => setType(e.target.value)}
+                    displayEmpty
+                    inputProps={{ 'aria-label': 'Without label' }}
+                    fullWidth
+                    size='small'
+                  >
+                    <MenuItem disabled value=''
+                    >
+                      <div
+                        style={{ color: 'lightgrey' }}
+                      >{input.placeholder}</div>
+                    </MenuItem>
+                    {input.items.map((item) => (
+                      <MenuItem value={item}>
+                        {item}
+                      </MenuItem>
+                    ))}
+
+                  </Select>
+                  : <TextField fullWidth placeholder={input.placeholder}
+                    size='small'
+                  />
+                }
                 <FormHelperText
                   sx={{
                     fontSize: '14px',
@@ -135,20 +154,6 @@ const Business = () => {
                   }}>{input.helper}</FormHelperText>
               </div>
             ))}
-
-            <FormControlLabel
-              control={
-                <Checkbox sx={{
-                  '&.Mui-checked': {
-                    color: '#7F56D9'
-                  }
-                }}
-                />} label={<div style={{
-                  fontSize: '14px',
-                  color: '#667085'
-                }}>i agree to the
-                  <Button sx={{ color: "#7F56D9", textTransform: 'none' }}>Terms and Conditions</Button>
-                </div>} />
             <Button
               variant="contained"
               onClick={() => navigate('#')}
@@ -162,32 +167,8 @@ const Business = () => {
                 }
               }}
             >
-              Get started
+              Continue
             </Button>
-            <Button
-              variant="outlined"
-              onClick={() => navigate('#')}
-              sx={{
-                border: "1px solid #D0D5DD",
-                color: '#344054',
-                height: '44px',
-                textTransform: 'none',
-              }}
-            >
-              <FcGoogle style={{ marginRight: '5px', width: '25px', height: '25px' }} />Sign up with Google
-            </Button>
-            <div
-              style={{
-                fontSize: '14px',
-                color: '#667085',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                margin: '5%',
-
-              }}>
-              Already have an account?              <Button sx={{ color: "#7F56D9", textTransform: 'none' }}>Log in</Button>
-            </div>
           </FormGroup>
           <div
             style={{
