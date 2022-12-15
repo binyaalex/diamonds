@@ -37,15 +37,50 @@ export default function AccountDetails() {
         color: '#475467',
     }
 
+    const accountArr = [
+        {
+            field: 'Company Name',
+            value: 'Diamonds LLC',
+        },
+        {
+            field: 'DBA',
+            value: 'DBA',
+        },
+        {
+            field: 'Business type',
+            value: 'This is my buisness type',
+        },
+        {
+            field: 'Tax Identification Number',
+            value: 'TIN/EIN number',
+        },
+        {
+            field: 'Business address',
+            value: 'Start typing address...',
+        },
+        {
+            field: 'Email',
+            value: 'myemail@gmail.com',
+        },
+        {
+            field: 'Phone number',
+            value: '0544435566',
+        },
+        {
+            field: 'Main contact',
+            value: 'Danna Marom',
+        },
+    ]
+
     return (
         <List sx={{ width: '90%', bgcolor: 'background.paper', paddingTop: 0 }}>
             <Typography sx={headerCss} >
                 Account
             </Typography>
-            {[1, 2, 3].map((value) => (
+            {accountArr.map((element, i) => (
                 <ListItem
                     sx={listItemCss}
-                    key={value}
+                    key={i}
                     disableGutters
                     secondaryAction={
                         <Typography sx={editCss} >
@@ -55,10 +90,10 @@ export default function AccountDetails() {
                 >
                     <Stack direction="column" spacing={0}>
                         <Typography sx={fieldCss} >
-                            Company Name
+                            {element.field}
                         </Typography>
                         <Typography sx={valueCss} >
-                            Diamonds LLC
+                            {element.value}
                         </Typography>
                     </Stack>
                 </ListItem>
