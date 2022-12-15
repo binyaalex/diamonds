@@ -149,6 +149,7 @@ function Footer() {
               container
               spacing={{ xs: 2, md: 3 }}
               columns={{ xs: 4, sm: 8, md: 12 }}
+              className={styles.footerRight}
             >
               {labels3.map((labels3) => (
                 <>
@@ -311,54 +312,54 @@ function Footer() {
         </Box> */}
           {/* **************** */}
         </Box>
-        <Box className={styles.SecondWrapper}>
+      </Box>
+      <Box className={styles.SecondWrapper}>
+        <Box
+          className={styles.secondDiv}
+          sx={{
+            display: "flex",
+            justifyContent: "space-around",
+          }}
+        >
+          {" "}
+          <Typography
+            className={styles.copyRight}
+            sx={{
+              fontWeight: 400,
+              color: "#5A7184",
+              textDecoration: "none",
+              fontFamily: ["Inter"],
+              fontSize: 14,
+              display: "flex",
+              alignItems: "center",
+              flexGrow: 2,
+            }}
+          >
+            Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
+          </Typography>
           <Box
-            className={styles.secondDiv}
+            className={styles.socIcon}
             sx={{
               display: "flex",
+              alignItems: "center",
+              flexGrow: 1,
               justifyContent: "space-around",
             }}
           >
-            {" "}
-            <Typography
-              className={styles.copyRight}
-              sx={{
-                fontWeight: 400,
-                color: "#5A7184",
-                textDecoration: "none",
-                fontFamily: ["Inter"],
-                fontSize: 14,
-                display: "flex",
-                alignItems: "center",
-                flexGrow: 2,
-              }}
-            >
-              Diamonds @ Copyright 2022, Inc. All rights reserved{" "}
-            </Typography>
-            <Box
-              className={styles.socIcon}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                flexGrow: 1,
-                justifyContent: "space-around",
-              }}
-            >
-              <Box>
-                <img src={Facebook} />
-              </Box>
-              <Box>
-                <img src={Twitter} />
-              </Box>
-              <Box>
-                <img src={Linkedin} />
-              </Box>
-              <Box>
-                <img src={Instagram} />
-              </Box>
-              <Box>
-                <img src={Github} />
-              </Box>
+            <Box>
+              <img src={Facebook} />
+            </Box>
+            <Box>
+              <img src={Twitter} />
+            </Box>
+            <Box>
+              <img src={Linkedin} />
+            </Box>
+            <Box>
+              <img src={Instagram} />
+            </Box>
+            <Box>
+              <img src={Github} />
             </Box>
           </Box>
         </Box>
