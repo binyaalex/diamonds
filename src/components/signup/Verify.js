@@ -10,7 +10,7 @@ import { ReactComponent as Plus } from "../../assets/icons/Plus.svg";
 import mail from "../../assets/icons/mail.png"
 import { FcGoogle } from 'react-icons/fc';
 
-import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox, Select, MenuItem } from '@mui/material/';
+import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox, Select, MenuItem, Divider } from '@mui/material/';
 const progress = [
   { icon: <Tick />, line: 'Your details' },
   { icon: <Tick />, line: 'Business details', marked: true },
@@ -89,7 +89,7 @@ const Verify = () => {
               justifyContent: 'space-between',
               position: 'absolute',
               bottom: 0,
-              width: '50%'
+              width: '33%'
             }}>
             <div
               style={{
@@ -142,8 +142,8 @@ const Verify = () => {
               }}
             >Tax identification number
             </FormLabel>
-            <TextField fullWidth placeholder='TIN/EIN number'
-              size='small'
+            <TextField placeholder='TIN/EIN number'
+              size='small' sx={{ width: '300px' }}
             />
             <div>
               <h3
@@ -186,34 +186,53 @@ const Verify = () => {
                     borderColor: 'lightgray',
                     width: '30px !important',
                     height: '40px',
-                    p: 0,
-                    // mt: '100%'
-                    // position: 'relative',
-                    bottom: 0
                   }}
                 >
                   <Plus />
                 </Button>
               </Grid>
             </Grid>
-            <Button
-              variant="contained"
-              onClick={() => navigate('/verify')}
+            <Divider sx={{ my: 2 }} />
+            <Box
               sx={{
-                backgroundColor: '#7F56D9',
-                height: '44px',
-                textTransform: 'none',
-                mb: 2,
-                '&:hover': {
-                  backgroundColor: "#160FC6"
-                }
+                display: 'flex',
+                justifyContent: 'end'
               }}
             >
-              Continue
-            </Button>
+              <Button
+                variant="outlined"
+                onClick={() => navigate('/business')}
+                sx={{
+                  border: "1px solid #D0D5DD",
+                  color: '#344054',
+                  height: '40px',
+                  textTransform: 'none',
+                  width: '170px',
+                  m: 1
+                }}
+              >
+                Back
+              </Button>
+              <Button
+                variant="contained"
+                onClick={() => navigate('/')}
+                sx={{
+                  width: '170px',
+                  m: 1,
+                  backgroundColor: '#7F56D9',
+                  height: '40px',
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: "#160FC6"
+                  }
+                }}
+              >
+                Continue
+              </Button>
+            </Box>
           </FormGroup>
           <Button
-            onClick={() => navigate('/verify')}
+            onClick={() => navigate('/')}
             sx={{
               position: 'absolute',
               bottom: 10,

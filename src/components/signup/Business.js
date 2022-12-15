@@ -93,7 +93,7 @@ const Business = () => {
               justifyContent: 'space-between',
               position: 'absolute',
               bottom: 0,
-              width: '50%'
+              width: '33%'
             }}>
             <div
               style={{
