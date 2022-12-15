@@ -5,28 +5,24 @@ import { useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
 import { ReactComponent as Tick } from "../../assets/icons/Tick.svg";
 import { ReactComponent as Dot } from "../../assets/icons/Dot.svg";
-import { ReactComponent as Dot_gray } from "../../assets/icons/Dot_gray.svg";
 import { ReactComponent as Arrow } from "../../assets/icons/Arrow.svg";
+import { ReactComponent as Plus } from "../../assets/icons/Plus.svg";
 import mail from "../../assets/icons/mail.png"
 import { FcGoogle } from 'react-icons/fc';
 
-import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox, Select, MenuItem } from '@mui/material/';
+import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox, Select, MenuItem, Divider } from '@mui/material/';
 const progress = [
   { icon: <Tick />, line: 'Your details' },
-  { icon: <Dot />, line: 'Business details', marked: true },
-  { icon: <Dot_gray />, line: 'Identify verification' },
+  { icon: <Tick />, line: 'Business details', marked: true },
+  { icon: <Dot />, line: 'Identify verification', marked: true },
 ]
 const inputs = [
-  { label: 'Company Name*', placeholder: 'Enter your company name' },
-  { label: 'Doing business as (DBA)', placeholder: 'Enter your DBA here' },
-  { label: 'Business type*', placeholder: 'Select your business type', items: ['Jewelry Store', 'Pawn Shop', 'Other'] },
-  { label: 'Business address', placeholder: 'Start typing address...' },
-  { label: 'Shipping address', placeholder: 'start typing address...', helper: 'We only deliver to commercial address' },
-  { label: 'Contact phone number', placeholder: 'Start typing your phone number' }
+  { label: 'Name', placeholder: 'Person name' },
+  { label: 'Company name', placeholder: 'Company name' },
+  { label: 'Phone number', placeholder: 'Phone number' }
 ]
 
 const Verify = () => {
-  const [type, setType] = useState('')
   const navigate = useNavigate();
 
   return (
@@ -40,7 +36,7 @@ const Verify = () => {
           width: '100vw',
           height: '100vh'
         }}>
-        <Grid item xs={6}
+        <Grid item xs={4}
           sx={{
             background: '#F2F4F7', overflow: 'hidden',
             height: '100%'
@@ -93,7 +89,7 @@ const Verify = () => {
               justifyContent: 'space-between',
               position: 'absolute',
               bottom: 0,
-              width: '50%'
+              width: '33%'
             }}>
             <div
               style={{
@@ -113,91 +109,130 @@ const Verify = () => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={6}
+        <Grid item xs={8}
           sx={{ background: 'white', height: '100%' }}
         >
           <FormGroup
             sx={{
-              width: "50%",
+              width: "90%",
               margin: 'auto'
             }}>
-            <div
-            >
+            <div>
               <h1
                 style={{
                   fontWeight: 600,
                   color: "#101828",
                 }}
               >
-                Business details              </h1>
+                Identity Verification
+              </h1>
               <h4
                 style={{
                   color: "#667085",
                 }}
               >
-                Tell us more about your business
+                The following information is required, but can be provided later on.
               </h4>
             </div>
-            {inputs.map((input) => (
-              <div style={{ marginBottom: '5%' }}>
-                <FormLabel
-                  sx={{
-                    fontWeight: 500,
-                    fontSize: '14px',
-                    color: '#344054'
-                  }}
-                >{input.label}</FormLabel>
-                {input.items ?
-                  <Select
-                    value={type}
-                    onChange={(e) => setType(e.target.value)}
-                    displayEmpty
-                    inputProps={{ 'aria-label': 'Without label' }}
-                    fullWidth
-                    size='small'
-                  >
-                    <MenuItem disabled value=''
-                    >
-                      <div
-                        style={{ color: 'lightgrey' }}
-                      >{input.placeholder}</div>
-                    </MenuItem>
-                    {input.items.map((item) => (
-                      <MenuItem value={item}>
-                        {item}
-                      </MenuItem>
-                    ))}
-
-                  </Select>
-                  : <TextField fullWidth placeholder={input.placeholder}
+            <FormLabel
+              sx={{
+                fontWeight: 500,
+                fontSize: '14px',
+                color: '#344054'
+              }}
+            >Tax identification number
+            </FormLabel>
+            <TextField placeholder='TIN/EIN number'
+              size='small' sx={{ width: '300px' }}
+            />
+            <div>
+              <h3
+                style={{
+                  fontWeight: 600,
+                  color: "#101828",
+                }}
+              >
+                Business references              </h3>
+              <h4
+                style={{
+                  color: "#667085",
+                }}
+              >
+                Please pvovide contact details of at least 3 established businesses with which you conduct business routinely              </h4>
+            </div>
+            <Grid container spacing={2}>
+              {inputs.map((input) => (
+                <Grid item xs={3}>
+                  <FormLabel
+                    sx={{
+                      fontWeight: 500,
+                      fontSize: '14px',
+                      color: '#344054'
+                    }}
+                  >{input.label}</FormLabel>
+                  <TextField fullWidth placeholder={input.placeholder}
                     size='small'
                   />
-                }
-                <FormHelperText
+                </Grid>
+              ))}
+              <Grid item xs={1}
+                sx={{ display: 'flex', alignItems: 'end' }}
+              >
+                <Button
+                  variant='outlined'
+                  // color='inherit'
+                  onClick={() => { }}
                   sx={{
-                    fontSize: '14px',
-                    color: '#667085'
-                  }}>{input.helper}</FormHelperText>
-              </div>
-            ))}
-            <Button
-              variant="contained"
-              onClick={() => navigate('/verify')}
+                    borderColor: 'lightgray',
+                    width: '30px !important',
+                    height: '40px',
+                  }}
+                >
+                  <Plus />
+                </Button>
+              </Grid>
+            </Grid>
+            <Divider sx={{ my: 2 }} />
+            <Box
               sx={{
-                backgroundColor: '#7F56D9',
-                height: '44px',
-                textTransform: 'none',
-                mb: 2,
-                '&:hover': {
-                  backgroundColor: "#160FC6"
-                }
+                display: 'flex',
+                justifyContent: 'end'
               }}
             >
-              Continue
-            </Button>
+              <Button
+                variant="outlined"
+                onClick={() => navigate('/business')}
+                sx={{
+                  border: "1px solid #D0D5DD",
+                  color: '#344054',
+                  height: '40px',
+                  textTransform: 'none',
+                  width: '170px',
+                  m: 1
+                }}
+              >
+                Back
+              </Button>
+              <Button
+                variant="contained"
+                onClick={() => navigate('/')}
+                sx={{
+                  width: '170px',
+                  m: 1,
+                  backgroundColor: '#7F56D9',
+                  height: '40px',
+                  textTransform: 'none',
+                  '&:hover': {
+                    backgroundColor: "#160FC6"
+                  }
+                }}
+              >
+                Continue
+              </Button>
+            </Box>
           </FormGroup>
           <Button
-            onClick={() => navigate('/verify')}
+            onClick={() => navigate('/')}
             sx={{
               position: 'absolute',
               bottom: 10,
