@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import styles from "../../App.module.scss";
+import { useNavigate } from "react-router-dom";
 
 //MUI
 import AppBar from "@mui/material/AppBar";
@@ -80,6 +81,8 @@ const AntTab = styled((props) => <Tab disableRipple {...props} />)(
 );
 
 function Header({ isUser, setIsUser }) {
+  const navigate = useNavigate();
+
   const [value, setValue] = useState(0);
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -220,6 +223,9 @@ function Header({ isUser, setIsUser }) {
           >
             <Badge badgeContent={3} color="error">
               <IconButton
+                onClick={() => {
+                  navigate("/shopping");
+                }}
                 sx={{
                   padding: "12px",
                   width: "42px",
