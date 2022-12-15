@@ -1,9 +1,8 @@
-
+import PaymentDetails from "./PaymentDetails";
 const Payment = () => {
-
   return (
     <>
-      payment
+      <PaymentDetails />
     </>
   );
 };
