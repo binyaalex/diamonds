@@ -10,9 +10,10 @@ import Header from "./components/header/Header";
 import Footer from "./components/footer/Footer";
 import Signup from "./components/signup/Signup";
 import Business from "./components/signup/Business";
+import Account from "./components/settings/Account";
 
 function App() {
-  const [isUser, setIsUser] = useState(false);
+  const [isUser, setIsUser] = useState(false); 
 
   return (
     <div className="App">
@@ -27,6 +28,7 @@ function App() {
             <Route path="/myorders" element={<MyOrders />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/business" element={<Business />} />
+            <Route path="/account" element={<Account />} />
           </Routes>
         </div>
         <Footer />
