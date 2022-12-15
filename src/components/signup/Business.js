@@ -40,7 +40,7 @@ const Business = () => {
           width: '100vw',
           height: '100vh'
         }}>
-        <Grid item xs={6}
+        <Grid item xs={4}
           sx={{
             background: '#F2F4F7', overflow: 'hidden',
             height: '100%'
@@ -113,12 +113,13 @@ const Business = () => {
             </div>
           </div>
         </Grid>
-        <Grid item xs={6}
+        <Grid item xs={8}
           sx={{ background: 'white', height: '100%' }}
         >
           <FormGroup
             sx={{
               width: "50%",
+              maxWidth: '400px',
               margin: 'auto'
             }}>
             <div
@@ -139,7 +140,9 @@ const Business = () => {
               </h4>
             </div>
             {inputs.map((input) => (
-              <div style={{ marginBottom: '5%' }}>
+              <div
+                style={{ marginBottom: '2%' }}
+              >
                 <FormLabel
                   sx={{
                     fontWeight: 500,
