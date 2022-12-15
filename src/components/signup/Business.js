@@ -6,6 +6,7 @@ import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
 import { ReactComponent as Tick } from "../../assets/icons/Tick.svg";
 import { ReactComponent as Dot } from "../../assets/icons/Dot.svg";
 import { ReactComponent as Dot_gray } from "../../assets/icons/Dot_gray.svg";
+import { ReactComponent as Arrow } from "../../assets/icons/Arrow.svg";
 import mail from "../../assets/icons/mail.png"
 import { FcGoogle } from 'react-icons/fc';
 
@@ -86,6 +87,31 @@ const Business = () => {
             ))}
 
           </div>
+          <div
+            style={{
+              display: 'flex',
+              justifyContent: 'space-between',
+              position: 'absolute',
+              bottom: 0,
+              width: '50%'
+            }}>
+            <div
+              style={{
+                fontSize: '14px',
+                color: '#667085',
+                padding: '20px'
+              }}>
+              &copy; Diamonds UI 2022
+            </div>
+            <div
+              style={{
+                fontSize: '14px',
+                color: '#667085',
+                padding: '20px'
+              }}>
+              <img src={mail} style={{ marginRight: '5px' }} />help@diamonds.com
+            </div>
+          </div>
         </Grid>
         <Grid item xs={6}
           sx={{ background: 'white', height: '100%' }}
@@ -156,7 +182,7 @@ const Business = () => {
             ))}
             <Button
               variant="contained"
-              onClick={() => navigate('#')}
+              onClick={() => navigate('/verify')}
               sx={{
                 backgroundColor: '#7F56D9',
                 height: '44px',
@@ -170,31 +196,19 @@ const Business = () => {
               Continue
             </Button>
           </FormGroup>
-          <div
-            style={{
-              display: 'flex',
-              justifyContent: 'space-between',
+          <Button
+            onClick={() => navigate('/verify')}
+            sx={{
               position: 'absolute',
-              bottom: 0,
-              width: '50%'
-            }}>
-            <div
-              style={{
-                fontSize: '14px',
-                color: '#667085',
-                padding: '20px'
-              }}>
-              &copy; Diamonds UI 2022
-            </div>
-            <div
-              style={{
-                fontSize: '14px',
-                color: '#667085',
-                padding: '20px'
-              }}>
-              <img src={mail} style={{ marginRight: '5px' }} />help@diamonds.com
-            </div>
-          </div>
+              bottom: 10,
+              right: 20,
+              color: '#667085',
+              // height: '44px',
+              textTransform: 'none',
+            }}
+            startIcon={<Arrow />}
+          >
+            Skip            </Button>
         </Grid>
 
       </Grid>
