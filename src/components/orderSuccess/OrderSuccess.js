@@ -1,4 +1,5 @@
 import styles from './OrderSuccess.module.scss';
+import { useNavigate } from "react-router-dom";
 
 import Container from '@mui/material/Container';
 import Typography from '@mui/material/Typography';
@@ -7,7 +8,9 @@ import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
 import V from '../../assets/icons/V.png'
 
-const OrderSuccess = () => {
+const OrderSuccess = ({setIsUser}) => {
+    const navigate = useNavigate();
+
     return (
         <Container align='center'>
             <img src={V} style={{padding: '85px 0 32px'}} />
@@ -24,6 +27,10 @@ const OrderSuccess = () => {
                     sx={{ color: '#4640DE' }} 
                     className={styles.backButton} 
                     variant="text"
+                    onClick={() => {
+                        setIsUser(true)
+                        navigate("/");
+                    }}
                 >
                     <ArrowBackIosIcon sx={{ fontSize: '12px', marginRight: '12px' }} />
                     Back to shopping
@@ -32,6 +39,9 @@ const OrderSuccess = () => {
                     sx={{color: 'white', backgroundColor: '#4640DE'}} 
                     className={styles.orderButton} 
                     variant="contained"
+                    onClick={() => {
+                        navigate("/myorders");
+                    }}
                 >Your Orders</Button>
             </div>
         </Container>

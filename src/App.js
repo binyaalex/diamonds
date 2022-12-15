@@ -23,7 +23,7 @@ function App() {
             <Route path="/" element={<Home isUser={isUser} />} />
             <Route path="/productdetails" element={<ProductDetails />} />
             <Route path="/shopping" element={<Shopping setIsUser={setIsUser} />} />
-            <Route path="/ordersuccess" element={<OrderSuccess />} />
+            <Route path="/ordersuccess" element={<OrderSuccess setIsUser={setIsUser} />} />
             <Route path="/myorders" element={<MyOrders />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/business" element={<Business />} />
