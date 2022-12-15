@@ -40,12 +40,22 @@ const PaymentDetails = () => {
       </Box>
       <Box>
         <Box>
-          <Typography>2 Bussiness Days</Typography>
+          <Box>
+            <Typography>2 Bussiness Days</Typography>
+            <Typography>Estimated deliver time jul 20 - Aug 03</Typography>
+          </Box>
           <Typography>$35</Typography>
+          <Typography>$45</Typography>
         </Box>
         <Box>
-          <Typography>2 Bussiness Days</Typography>
-          <Typography>$35</Typography>
+          <Box>
+            <Typography>2 Bussiness Days</Typography>
+            <Typography>Estimated deliver time jul 20 - Aug 03</Typography>
+          </Box>
+          <Box>
+            <Typography>$35</Typography>
+            <Typography>$45</Typography>
+          </Box>
         </Box>
       </Box>
     </Box>

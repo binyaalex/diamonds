@@ -1,5 +1,6 @@
 import styles from "./MyOrders.module.scss";
-
+import { useNavigate } from "react-router-dom";
+import Payment from "./payment/Payment";
 //Mui
 
 import Grid from "@mui/material/Grid"; // Grid version 1
@@ -13,7 +14,7 @@ import Stroller from "../../../assets/images/Stroller.png";
 import ShoppingCartTable from "./ShoppingCartTable";
 
 export default function ShoppingCartList({ orders, handleNext }) {
-  //   const navigate = useNavigate();
+  const navigate = useNavigate();
   const ordersArr = orders || [1, 2, 3];
   // console.log(cardsArr);
 
@@ -66,7 +67,7 @@ export default function ShoppingCartList({ orders, handleNext }) {
             <Typography>$1600.00</Typography>
           </Box>
           <Box>
-            <button className={styles.checkoutbtn} onClick={handleNext} >
+            <button className={styles.checkoutbtn} onClick={handleNext}>
               <IconButton aria-label="">
                 <img src={Stroller} />
               </IconButton>
