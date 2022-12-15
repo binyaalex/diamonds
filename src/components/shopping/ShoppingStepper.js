@@ -84,7 +84,7 @@ export default function ShoppingStepper({setIsUser}) {
     },
   }));
 
-  const ColorlibStepIconRoot = styled('div')(({ ownerState }) => ({
+  const ColorlibStepIconRoot = styled('div')(({  ownerState }) => ({
     backgroundColor: '#fff',
     zIndex: 1,
     color: '#C4CDD5',
@@ -218,7 +218,7 @@ export default function ShoppingStepper({setIsUser}) {
         ) : (
           <React.Fragment>
             <Typography sx={{ mt: 2, mb: 1 }}>
-              <Steps activeStep={activeStep} />
+              <Steps activeStep={activeStep} handleNext={handleNext} />
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'row', pt: 2 }}>
               <Button

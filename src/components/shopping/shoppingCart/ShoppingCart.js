@@ -102,7 +102,7 @@ const ordersArr = [
   },
 ];
 
-const ShoppingCart = () => {
+const ShoppingCart = ({handleNext}) => {
   const [componentWidth, setComponentWidth] = useState(null);
 
   const getCardWidth = (cardWidth) => {
@@ -179,7 +179,7 @@ const ShoppingCart = () => {
 
   return (
     <>
-      <ShoppingCartList orders={ordersArr} />
+      <ShoppingCartList orders={ordersArr} handleNext={handleNext} />
       <CardsHeader componentWidth={componentWidth} />
       <CardList products={productsArr} getCardWidth={getCardWidth} />
     </>

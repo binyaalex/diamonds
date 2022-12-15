@@ -12,7 +12,7 @@ import cardDiamond from "../../../assets/images/cardDiamond.png";
 import Stroller from "../../../assets/images/Stroller.png";
 import ShoppingCartTable from "./ShoppingCartTable";
 
-export default function ShoppingCartList({ orders }) {
+export default function ShoppingCartList({ orders, handleNext }) {
   //   const navigate = useNavigate();
   const ordersArr = orders || [1, 2, 3];
   // console.log(cardsArr);
@@ -66,7 +66,7 @@ export default function ShoppingCartList({ orders }) {
             <Typography>$1600.00</Typography>
           </Box>
           <Box>
-            <button className={styles.checkoutbtn}>
+            <button className={styles.checkoutbtn} onClick={handleNext} >
               <IconButton aria-label="">
                 <img src={Stroller} />
               </IconButton>

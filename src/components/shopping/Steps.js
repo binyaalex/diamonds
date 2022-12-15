@@ -1,20 +1,20 @@
 import Payment from "./payment/Payment";
 import ShoppingCart from "./shoppingCart/ShoppingCart";
 
-const Steps = ({activeStep}) => {
+const Steps = ({activeStep, handleNext}) => {
 
   switch(activeStep) {
     case 0:
       return (
         <>
-          <ShoppingCart />
+          <ShoppingCart handleNext={handleNext} />
         </>
       );
       break;
     case 1:
       return (
         <>
-          <Payment />
+          <Payment handleNext={handleNext} />
         </>
       );
       break;
