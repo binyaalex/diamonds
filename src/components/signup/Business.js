@@ -4,17 +4,25 @@ import { useNavigate } from "react-router-dom";
 
 import screen from '../../assets/images/screen.JPG'
 import { ReactComponent as Logo } from "../../assets/icons/Logo.svg";
+import { ReactComponent as Tick } from "../../assets/icons/Tick.svg";
+import { ReactComponent as Dot } from "../../assets/icons/Dot.svg";
+import { ReactComponent as Dot_gray } from "../../assets/icons/Dot_gray.svg";
 import mail from "../../assets/icons/mail.png"
 import { FcGoogle } from 'react-icons/fc';
 
 import { Button, Box, FormGroup, FormControl, FormControlLabel, FormLabel, TextField, Grid, Typography, FormHelperText, Checkbox } from '@mui/material/';
-import { display, margin } from '@mui/system';
-
+// import { display, margin } from '@mui/system';
+const progress = [
+  { icon: <Tick />, line: 'Your details' },
+  { icon: <Dot />, line: 'Business details', marked: true },
+  { icon: <Dot_gray />, line: 'Identify verification' },
+]
 const inputs = [
   { label: 'Full Name*', placeholder: 'Enter your name' },
   { label: 'Email*', placeholder: 'Enter your email' },
   { label: 'Password*', placeholder: 'Create a password', helper: 'Must be at least 8 characters' },
 ]
+
 const Business = () => {
   const navigate = useNavigate();
 
@@ -52,6 +60,32 @@ const Business = () => {
               Diamonds
             </h5>
           </Box>
+          <div
+            style={{
+
+              padding: '36px 48px'
+            }}>
+            {progress.map((step) => (
+
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  padding: '5px 0'
+                }}>
+                {step.icon}
+                <p
+                  style={{
+                    fontWeight: 500,
+                    fontSize: '16px',
+                    color: `${step.marked ? '#6941C6' : '#344054'}`,
+                    marginLeft: '10px'
+                  }}
+                >{step.line}</p>
+              </div>
+            ))}
+
+          </div>
         </Grid>
         <Grid item xs={6}
           sx={{ background: 'white', height: '100%' }}
