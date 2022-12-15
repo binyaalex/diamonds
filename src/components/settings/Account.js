@@ -1,5 +1,6 @@
 import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
+import AccountDetails from './AccountDetails';
 
 import SettingsMenu from "./SettingsMenu";
 
@@ -23,8 +24,8 @@ const Account = () => {
                 <Grid item xs={2.5} sx={{ paddingLeft: '0 !important', paddingTop: '0 !important',}}>
                     <SettingsMenu page='account' />
                 </Grid>
-                <Grid item xs={9.5}>
-                    Account
+                <Grid item xs={9.5} sx={{paddingTop: '0 !important'}}>
+                    <AccountDetails />
                 </Grid>
             </Grid>
         </>
