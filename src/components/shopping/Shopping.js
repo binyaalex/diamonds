@@ -4,11 +4,11 @@ import Box from "@mui/material/Box";
 
 import ShoppingStepper from "./ShoppingStepper";
 
-const Shopping = () => {
+const Shopping = ({setIsUser}) => {
 
   return (
     <Box className={styles.shoppingBackground} >
-      <ShoppingStepper />
+      <ShoppingStepper setIsUser={setIsUser} />
     </Box>
   );
 };

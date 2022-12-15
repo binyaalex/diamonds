@@ -1,11 +1,14 @@
 import styles from "./Shopping.module.scss";
 
+import { useNavigate } from "react-router-dom";
+
 import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
 
-const MainTitle = ({text, description}) => {
+const MainTitle = ({text, description, setIsUser}) => {
+    const navigate = useNavigate();
   
     return (
         <>
@@ -14,7 +17,7 @@ const MainTitle = ({text, description}) => {
                     display: "flex",
                     justifyContent: "space-between",
                     alignItems: 'center',
-                    m: 'auto auto 70px'
+                    m: 'auto'
                 }}
             >
                 <Box>
@@ -31,6 +34,10 @@ const MainTitle = ({text, description}) => {
                     sx={{ color: '#4640DE' }} 
                     className={styles.backButton} 
                     variant="outlined"
+                    onClick={() => {
+                        setIsUser(true)
+                        navigate("/");
+                    }}
                 >
                     <ArrowBackIosIcon sx={{ fontSize: '12px', marginRight: '12px' }} />
                     Back to shopping

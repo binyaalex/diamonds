@@ -19,7 +19,7 @@ import ShoppingMainTitle from './ShoppingMainTitle'
 
 const steps = ['Cart', 'Shipping & payment', 'Review'];
 
-export default function ShoppingStepper() {
+export default function ShoppingStepper({setIsUser}) {
   const [activeStep, setActiveStep] = React.useState(0);
   const [skipped, setSkipped] = React.useState(new Set());
 
@@ -84,7 +84,7 @@ export default function ShoppingStepper() {
     },
   }));
 
-  const ColorlibStepIconRoot = styled('div')(({ theme, ownerState }) => ({
+  const ColorlibStepIconRoot = styled('div')(({ ownerState }) => ({
     backgroundColor: '#fff',
     zIndex: 1,
     color: '#C4CDD5',
@@ -112,7 +112,7 @@ export default function ShoppingStepper() {
 
 
   function ColorlibStepIcon(props) {
-    const { active, completed, className, } = props;
+    const { active, completed, className } = props;
     console.log(active);
     console.log(completed);
     let icon = <StepIcon label={props.icon} />
@@ -156,11 +156,12 @@ export default function ShoppingStepper() {
         <ShoppingMainTitle
           text="Shopping Cart"
           description="This is your cart based on your item you want to buy."
+          setIsUser={setIsUser}
         />
       : activeStep === 1 ? 
-        <ShoppingMainTitle text="Shipping & Payment" />
+        <ShoppingMainTitle text="Shipping & Payment" setIsUser={setIsUser} />
       : activeStep === 2 ?
-        <ShoppingMainTitle text="Review Order" />
+        <ShoppingMainTitle text="Review Order" setIsUser={setIsUser} />
       : ""
       }
       <Box sx={{ width: '100%' }}>
